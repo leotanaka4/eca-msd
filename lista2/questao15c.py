@@ -9,7 +9,7 @@ den = [1, 1.3066, 0.8536, 0.3266, 0.0625] # denominador da função de transfer�
 sys = ctl.TransferFunction(num, den) # criar o objeto que representa o sistema
 
 # 3. Definir os valores de tempo para simulação
-t = np.linspace(0, 40, 10000) # valores de tempo de 0 a 10 segundos
+t = np.linspace(0, 40, 10000) # valores de tempo de 0 a 40 segundos
 
 # 4. Obter a resposta ao degrau unitário usando a função `step()`
 t, y = ctl.step_response(sys, t) # obter a resposta ao degrau unitário
