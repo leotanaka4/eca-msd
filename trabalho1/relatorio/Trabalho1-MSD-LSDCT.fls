@@ -308,6 +308,12 @@ INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\sym
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT .\images\\Figure_1.png
+INPUT images\\Figure_1.png
+INPUT .\images\\Figure_1.png
+INPUT .\images\\Figure_1.png
+INPUT .\images\\Figure_1.png
+INPUT .\images\\Figure_1.png
 INPUT Trabalho1-MSD-LSDCT.aux
 INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1728.pk
 INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1728.pk
