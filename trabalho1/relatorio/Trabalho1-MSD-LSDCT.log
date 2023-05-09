@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  8 MAY 2023 21:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  9 MAY 2023 14:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -255,33 +255,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <./images//bode.png, id=9, 1110.0672pt x 544.9158pt>
 File: ./images//bode.png Graphic file (type png)
 <use ./images//bode.png>
-Package pdftex.def Info: ./images//bode.png  used on input line 81.
+Package pdftex.def Info: ./images//bode.png  used on input line 85.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
  [2 <./images//bode.png>]
-<./images//nyquist.png, id=18, 1110.0672pt x 544.9158pt>
+<./images//nyquist.png, id=19, 1110.0672pt x 544.9158pt>
 File: ./images//nyquist.png Graphic file (type png)
 <use ./images//nyquist.png>
-Package pdftex.def Info: ./images//nyquist.png  used on input line 102.
+Package pdftex.def Info: ./images//nyquist.png  used on input line 106.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
  [3 <./images//nyquist.png>] [4]
-<./images//Figure_1.png, id=30, 1110.0672pt x 544.9158pt>
-File: ./images//Figure_1.png Graphic file (type png)
-<use ./images//Figure_1.png>
-Package pdftex.def Info: ./images//Figure_1.png  used on input line 168.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
- [5 <./images//Figure_1.png>] (Trabalho1-MSD-LSDCT.aux) ) 
+<./images//questao1.png, id=30, 1110.0672pt x 544.9158pt>
+File: ./images//questao1.png Graphic file (type png)
+<use ./images//questao1.png>
+Package pdftex.def Info: ./images//questao1.png  used on input line 161.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [5 <./images//questao1.png>]
+<./images//questao2.png, id=37, 1110.0672pt x 544.9158pt>
+File: ./images//questao2.png Graphic file (type png)
+<use ./images//questao2.png>
+Package pdftex.def Info: ./images//questao2.png  used on input line 202.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [6 <./images//questao2.png>]
+<./images//questao3.png, id=42, 1110.0672pt x 544.9158pt>
+File: ./images//questao3.png Graphic file (type png)
+<use ./images//questao3.png>
+Package pdftex.def Info: ./images//questao3.png  used on input line 243.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [7 <./images//questao3.png>]
+<./images//questao4.png, id=48, 1110.0672pt x 544.9158pt>
+File: ./images//questao4.png Graphic file (type png)
+<use ./images//questao4.png>
+Package pdftex.def Info: ./images//questao4.png  used on input line 284.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [8 <./images//questao4.png>] [9] (Trabalho1-MSD-LSDCT.aux) ) 
 Here is how much of TeX's memory you used:
- 4020 strings out of 478338
- 66781 string characters out of 2836700
- 393122 words of memory out of 3000000
- 22401 multiletter control sequences out of 15000+600000
+ 4047 strings out of 478338
+ 67414 string characters out of 2836700
+ 390122 words of memory out of 3000000
+ 22425 multiletter control sequences out of 15000+600000
  476410 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,62p,392b,374s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 55i,12n,62p,392b,375s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Trabalho1-MSD-LSDCT.pdf (5 pages, 346662 bytes).
+Output written on Trabalho1-MSD-LSDCT.pdf (9 pages, 673744 bytes).
 PDF statistics:
- 90 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

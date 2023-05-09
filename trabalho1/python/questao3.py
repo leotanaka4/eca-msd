@@ -17,15 +17,7 @@ u = np.heaviside(t, 1) * np.cos(10*t)
 # 4. Realizar a simulação da resposta do sistema usando a função `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
-# 5. Calcular a frequência da resposta
-peaks, _ = find_peaks(yout)
-peak_times = t_out[peaks]
-periods = np.diff(peak_times)
-freqs = 1 / periods
-freq = np.mean(freqs)
-print('A frequência da resposta é:', freq, 'rad/s')
-
-# 6. Plotar o gráfico da resposta
+# 5. Plotar o gráfico da resposta
 plt.plot(t_out, yout)
 plt.xlabel('t')
 plt.ylabel('y(t)')
