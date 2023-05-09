@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1683501013 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" "Trabalho1-MSD-LSDCT.pdf" "Trabalho1-MSD-LSDCT" 1683501014
+["pdflatex"] 1683593453 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" "Trabalho1-MSD-LSDCT.pdf" "Trabalho1-MSD-LSDCT" 1683593455
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1670027114 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1663527945 10329961 d1b2e8d382e0f118d0e00de942ecb91d ""
@@ -30,8 +30,10 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1247596667 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1247596666 32362 bc3f3eec7ab7d65fe700963d4017d32c ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1247596667 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -67,10 +69,12 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1655058252 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1656697404 31050 293f2cc98a3575c4228b5157bf850b8f ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
-  "Trabalho1-MSD-LSDCT.aux" 1683501013 135 70e9f4f64d15ccc2335d1baf28eaec5a "pdflatex"
-  "Trabalho1-MSD-LSDCT.tex" 1683501012 4635 2a95df05e07140e011af9eb95537d9e0 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" 1683501012 4635 2a95df05e07140e011af9eb95537d9e0 ""
+  "Trabalho1-MSD-LSDCT.aux" 1683593454 135 d4052ffd439c87ade5f91de36f5b04c9 "pdflatex"
+  "Trabalho1-MSD-LSDCT.tex" 1683593453 6992 488dd5ad633a140f13532a8a39575c00 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" 1683593453 6992 488dd5ad633a140f13532a8a39575c00 ""
   "images//Figure_1.png" 1683500820 99886 0ba13ebd912515e9f6e43c6105819616 ""
+  "images//bode.png" 1683591937 47082 8ae2524a228fd4fd3f30660ac7fe2b45 ""
+  "images//nyquist.png" 1683593142 56877 62e085b47a06173437f8700c8cb99553 ""
   (generated)
   "Trabalho1-MSD-LSDCT.aux"
   "Trabalho1-MSD-LSDCT.log"

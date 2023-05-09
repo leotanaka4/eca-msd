@@ -1,6 +1,7 @@
 import numpy as np
 import control as ctrl
 import matplotlib.pyplot as plt
+from scipy.signal import find_peaks
 
 # 1. Definir a função de transferência do sistema
 num = [100, 0, 1600]  # numerador da função de transferência
@@ -17,10 +18,11 @@ u = np.heaviside(t, 1) * np.cos(10*t)
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
 # 5. Calcular a frequência da resposta
-Y = np.fft.fft(yout)
-mag = np.abs(Y)
-idx = np.argmax(mag)
-freq = np.fft.fftfreq(len(t), t[1]-t[0])[idx]
+peaks, _ = find_peaks(yout)
+peak_times = t_out[peaks]
+periods = np.diff(peak_times)
+freqs = 1 / periods
+freq = np.mean(freqs)
 print('A frequência da resposta é:', freq, 'rad/s')
 
 # 6. Plotar o gráfico da resposta
