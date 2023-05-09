@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1683654526 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" "Trabalho1-MSD-LSDCT.pdf" "Trabalho1-MSD-LSDCT" 1683654527
+["pdflatex"] 1683654696 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" "Trabalho1-MSD-LSDCT.pdf" "Trabalho1-MSD-LSDCT" 1683654698
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1670027114 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1663527945 10329961 d1b2e8d382e0f118d0e00de942ecb91d ""
@@ -69,9 +69,9 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/graphics/trig.sty" 1655058252 4023 293ea1c16429fc0c4cf605f4da1791a9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/l3backend/l3backend-pdftex.def" 1656697404 31050 293f2cc98a3575c4228b5157bf850b8f ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
-  "Trabalho1-MSD-LSDCT.aux" 1683654527 135 f6c15f8c16cbb49dbb9cc3232fa618d2 "pdflatex"
-  "Trabalho1-MSD-LSDCT.tex" 1683654525 10382 67274b12ec4b4199ef43f29123f394bd ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" 1683654525 10382 67274b12ec4b4199ef43f29123f394bd ""
+  "Trabalho1-MSD-LSDCT.aux" 1683654698 135 f6c15f8c16cbb49dbb9cc3232fa618d2 "pdflatex"
+  "Trabalho1-MSD-LSDCT.tex" 1683654695 10338 80b18dc2b01cce9932202213e5a23277 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex" 1683654695 10338 80b18dc2b01cce9932202213e5a23277 ""
   "images//bode.png" 1683591937 47082 8ae2524a228fd4fd3f30660ac7fe2b45 ""
   "images//nyquist.png" 1683593142 56877 62e085b47a06173437f8700c8cb99553 ""
   "images//questao1.png" 1683500820 99886 0ba13ebd912515e9f6e43c6105819616 ""
