@@ -332,7 +332,7 @@ den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 H = ctrl.TransferFunction(num, den)
 
 # 2. Plotar o diagrama de Nyquist
-ctrl.nyquist_plot(H, omega=None, plot=True)
+ctrl.nyquist_plot(H)
 plt.show()
 \end{lstlisting}
 
