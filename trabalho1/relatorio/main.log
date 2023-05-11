@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  9 MAY 2023 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  10 MAY 2023 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex
-(c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/Trabalho1-MSD-LSDCT.tex
+**c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex
+(c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex
 LaTeX2e <2022-06-01> patch level 5
 L3 programming layer <2022-07-04> (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -167,12 +167,34 @@ Package: fancyhdr 2022/05/18 v4.0.3 Extensive control of page headers and footer
 \f@nch@O@orf=\skip60
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
-) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count276
+\lst@gtempboxa=\box53
+\lst@token=\toks25
+\lst@length=\count277
+\lst@currlwidth=\dimen159
+\lst@column=\count278
+\lst@pos=\count279
+\lst@lostspace=\dimen160
+\lst@width=\dimen161
+\lst@newlines=\count280
+\lst@lineno=\count281
+\lst@maxwidth=\dimen162
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count282
+\lst@skipnumbers=\count283
+\lst@framebox=\box54
+) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count276
-\l__pdf_internal_box=\box53
-) (Trabalho1-MSD-LSDCT.aux)
-\openout1 = `Trabalho1-MSD-LSDCT.aux'.
+\l__color_backend_stack_int=\count284
+\l__pdf_internal_box=\box55
+) (main.aux)
+\openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
 LaTeX Font Info:    ... okay on input line 52.
@@ -225,23 +247,24 @@ LaTeX Font Info:    ... okay on input line 52.
 
 (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
-\scratchdimen=\dimen159
-\scratchbox=\box54
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count280
-\MPscratchDim=\dimen160
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count285
+\scratchdimen=\dimen163
+\scratchbox=\box56
+\nofMPsegments=\count286
+\nofMParguments=\count287
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count288
+\MPscratchDim=\dimen164
+\MPnumerator=\count289
+\makeMPintoPDFobject=\count290
+\everyMPtoPDFconversion=\toks27
 ) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
+\c@lstlisting=\count291
 LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -249,57 +272,77 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-<./images//bode.png, id=9, 1110.0672pt x 544.9158pt>
+)
+<./images//bode.png, id=1, 1110.0672pt x 544.9158pt>
 File: ./images//bode.png Graphic file (type png)
 <use ./images//bode.png>
-Package pdftex.def Info: ./images//bode.png  used on input line 85.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
- [2 <./images//bode.png>]
-<./images//nyquist.png, id=19, 1110.0672pt x 544.9158pt>
-File: ./images//nyquist.png Graphic file (type png)
-<use ./images//nyquist.png>
-Package pdftex.def Info: ./images//nyquist.png  used on input line 106.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
- [3 <./images//nyquist.png>] [4]
-<./images//questao1.png, id=30, 1110.0672pt x 544.9158pt>
+Package pdftex.def Info: ./images//bode.png  used on input line 77.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [1
+
+{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//bode.png>] [2]
+<./images//questao1.png, id=22, 1110.0672pt x 544.9158pt>
 File: ./images//questao1.png Graphic file (type png)
 <use ./images//questao1.png>
-Package pdftex.def Info: ./images//questao1.png  used on input line 161.
-(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [5 <./images//questao1.png>]
-<./images//questao2.png, id=37, 1110.0672pt x 544.9158pt>
+Package pdftex.def Info: ./images//questao1.png  used on input line 131.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 151--152
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[3 <./images//questao1.png>] [4]
+<./images//questao2.png, id=33, 1110.0672pt x 544.9158pt>
 File: ./images//questao2.png Graphic file (type png)
 <use ./images//questao2.png>
-Package pdftex.def Info: ./images//questao2.png  used on input line 202.
-(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [6 <./images//questao2.png>]
-<./images//questao3.png, id=42, 1110.0672pt x 544.9158pt>
+Package pdftex.def Info: ./images//questao2.png  used on input line 174.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 195--196
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[5 <./images//questao2.png>] [6]
+<./images//questao3.png, id=41, 1110.0672pt x 544.9158pt>
 File: ./images//questao3.png Graphic file (type png)
 <use ./images//questao3.png>
-Package pdftex.def Info: ./images//questao3.png  used on input line 243.
-(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [7 <./images//questao3.png>]
-<./images//questao4.png, id=48, 1110.0672pt x 544.9158pt>
+Package pdftex.def Info: ./images//questao3.png  used on input line 218.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 238--239
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[7 <./images//questao3.png>] [8]
+<./images//questao4.png, id=50, 1110.0672pt x 544.9158pt>
 File: ./images//questao4.png Graphic file (type png)
 <use ./images//questao4.png>
-Package pdftex.def Info: ./images//questao4.png  used on input line 284.
-(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [8 <./images//questao4.png>] [9] (Trabalho1-MSD-LSDCT.aux) ) 
+Package pdftex.def Info: ./images//questao4.png  used on input line 261.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 281--282
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[9 <./images//questao4.png>] [10] [11]
+<./images//nyquist.png, id=61, 1110.0672pt x 544.9158pt>
+File: ./images//nyquist.png Graphic file (type png)
+<use ./images//nyquist.png>
+Package pdftex.def Info: ./images//nyquist.png  used on input line 321.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+ [12 <./images//nyquist.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 4047 strings out of 478338
- 67414 string characters out of 2836700
- 390122 words of memory out of 3000000
- 22425 multiletter control sequences out of 15000+600000
- 476410 words of font info for 57 fonts, out of 8000000 for 9000
+ 5676 strings out of 478338
+ 89116 string characters out of 2836700
+ 434343 words of memory out of 3000000
+ 24041 multiletter control sequences out of 15000+600000
+ 477182 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,12n,62p,392b,375s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Trabalho1-MSD-LSDCT.pdf (9 pages, 673668 bytes).
+ 55i,12n,62p,377b,1687s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (12 pages, 1042037 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
