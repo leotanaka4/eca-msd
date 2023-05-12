@@ -190,11 +190,11 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
 \end{equation}
 
 \begin{equation}
-    Y(s) = \frac{100}{16} \left[ \frac{0.8484(s + 0.1)}{(s + 0.1)^2 + 9.999^2} - \frac{0.0115 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} + \frac{0.1515s}{s^2 + 1^2} + \frac{0.0003}{s^2 + 1^2} \right]
+    Y(s) = \frac{100}{16} \left[ \frac{0.8484(s + 0.1)}{(s + 0.1)^2 + 9.999^2} - \frac{0.0115 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} +\frac{0.1515s}{s^2 + 1^2} + \frac{0.0003}{s^2 + 1^2} \right]
 \end{equation}
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ 0.8484e^{-0.1t}cos(9.999t) - 0.0115e^{-0.1t}sin(9.999t) + 0.1515cos(t) + 0.0003sin(t) \right]
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ 0.8484e^{-0.1t}cos(9.999t) - 0.0115e^{-0.1t}sin(9.999t) + 0.1515cos(t) + 0.0003sin(t) \right] 1(t)
 \end{equation}
 
 \begin{figure}[h]
@@ -223,7 +223,8 @@ u = np.heaviside(t, 1) * np.cos(t)
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
 # 5. Resposta analitica
-y_a = 100/16*(0.8484*np.exp(-0.1*t)*np.cos(9.999*t)-0.0115*np.exp(-0.1*t)*np.sin(9.999*t) + 0.1515*np.cos(t) + 0.0003*np.sin(t))
+y_a = 100/16*(0.8484*np.exp(-0.1*t)*np.cos(9.999*t)-0.0115*np.exp(-0.1*t)*np.sin(9.999*t) +
+    0.1515*np.cos(t) + 0.0003*np.sin(t))
 
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
@@ -260,7 +261,7 @@ plt.show()
 \end{equation}
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) - 0.01e^{-0.1t}sin(9.999t) \right]
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) - 0.01e^{-0.1t}sin(9.999t) \right] 1(t)
 \end{equation}
 
 \begin{figure}[h]
@@ -330,7 +331,7 @@ plt.show()
 \end{equation}
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) + 42.0320e^{-0.1t}sin(9.999t) - 42sin(10t) \right]
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) + 42.0320e^{-0.1t}sin(9.999t) - 42sin(10t) \right] 1(t)
 \end{equation}
 
 \begin{figure}[h]
@@ -359,7 +360,8 @@ u = np.heaviside(t, 1) * np.cos(10*t)
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
 # 5. Resposta analitica
-y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+42.0320*np.exp(-0.1*t)*np.sin(9.999*t)-42*np.sin(10*t))
+y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+42.0320*np.exp(-0.1*t)*np.sin(9.999*t)-
+    42*np.sin(10*t))
 
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
@@ -399,7 +401,7 @@ plt.show()
 \end{equation}
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[-0.0085e^{-0.1t}cos(9.999t)+0.0010e^{-0.1t}sin(9.999t) + 1.0085cos(100t) - 0.0002sin(100t) \right]
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[-0.0085e^{-0.1t}cos(9.999t)+0.0010e^{-0.1t}sin(9.999t) + 1.0085cos(100t) - 0.0002sin(100t) \right] 1(t)
 \end{equation}
 \begin{figure}[h]
     \centering
@@ -427,7 +429,8 @@ u = np.heaviside(t, 1) * np.cos(100*t)
 t_out, yout = ctrl.forced_response(sys, T=t, U=u)
 
 # 5. Resposta analitica
-y_a = 100/16*(-0.0085*np.exp(-0.1*t)*np.cos(9.999*t)+0.0010*np.exp(-0.1*t)*np.sin(9.999*t) + 1.0085*np.cos(100*t) - 0.0002*np.sin(100*t))
+y_a = 100/16*(-0.0085*np.exp(-0.1*t)*np.cos(9.999*t)+0.0010*np.exp(-0.1*t)*np.sin(9.999*t)+
+    1.0085*np.cos(100*t)-0.0002*np.sin(100*t))
 
 
 # 6. Plotar o grafico da resposta
