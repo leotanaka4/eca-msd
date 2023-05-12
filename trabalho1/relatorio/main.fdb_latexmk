@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1683851084 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex" "main.pdf" "main" 1683851086
+["pdflatex"] 1683851361 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex" "main.pdf" "main" 1683851363
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1683757402 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -72,16 +72,16 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/listings/listings.sty" 1623004942 80964 64e57373f36316e4a09b517cbf1aba2e ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/listings/lstmisc.sty" 1623004942 77022 ee25ce086f4a79d8cf73bac6f94c02a5 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex" 1683851083 13849 dca374407f50d15e72fdcc9d3ab774a7 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho1/relatorio/main.tex" 1683851361 13852 010c9e9740dc515e8d3b626c2774d8bc ""
   "images//bode.png" 1683762097 52584 982c541353335834aac70990705e3108 ""
   "images//impulso.png" 1683842715 94307 5d9af3018dc0a5e44fd6fc148129d933 ""
   "images//nyquist.png" 1683766066 56877 62e085b47a06173437f8700c8cb99553 ""
   "images//questao1.png" 1683850369 126411 f0d6859f42c37239f991d8a53dded271 ""
-  "images//questao2.png" 1683764394 100733 4795c7b312d3b4833da0a8f798c9779f ""
+  "images//questao2.png" 1683851267 131122 b0e4c693e2ed8356dd669eeaacd404f8 ""
   "images//questao3.png" 1683764358 107473 5cece2b670782941669c3ce2adac2d3d ""
   "images//questao4.png" 1683764498 287807 5bdbaab3d8e59cd500f0c6eea5fb643c ""
-  "main.aux" 1683851086 1593 9a7ea6f0b9a6e3219fb0ab80db6d62cc "pdflatex"
-  "main.tex" 1683851083 13849 dca374407f50d15e72fdcc9d3ab774a7 ""
+  "main.aux" 1683851363 1593 9a7ea6f0b9a6e3219fb0ab80db6d62cc "pdflatex"
+  "main.tex" 1683851361 13852 010c9e9740dc515e8d3b626c2774d8bc ""
   (generated)
   "main.aux"
   "main.log"

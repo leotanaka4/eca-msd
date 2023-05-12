@@ -260,7 +260,7 @@ plt.show()
 \end{equation}
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ 0.8484e^{-0.1t}cos(9.999t) - 0.0115e^{-0.1t}sin(9.999t) + 0.1515cos(t) + 0.0003sin(t) \right]
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) - 0.01e^{-0.1t}sin(9.999t) \right]
 \end{equation}
 
 \begin{figure}[h]
@@ -289,14 +289,16 @@ u = np.heaviside(t, 1) * np.cos(4*t)
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
-# 5. Plotar o grafico da resposta
+# 5. Resposta analitica
+y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)-0.01*np.exp(-0.1*t)*np.sin(9.999*t))
+
+# 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
+plt.plot(t, y_a)
 plt.xlabel('t')
 plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
-
-\quad Solução analítica:
 
 \newpage
 
@@ -334,8 +336,6 @@ plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
 
-\quad Solução analítica:
-
 \newpage
 
 \quad 4. Foi considerado uma entrada $u(t) = cos(100 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica.
@@ -371,8 +371,6 @@ plt.xlabel('t')
 plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
-
-Solução analítica:
 
 \newpage
 
