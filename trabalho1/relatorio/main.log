@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  11 MAY 2023 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  11 MAY 2023 21:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -290,65 +290,70 @@ Package pdftex.def Info: ./images//impulso.png  used on input line 108.
 <./images//questao1.png, id=25, 1110.0672pt x 544.9158pt>
 File: ./images//questao1.png Graphic file (type png)
 <use ./images//questao1.png>
-Package pdftex.def Info: ./images//questao1.png  used on input line 174.
+Package pdftex.def Info: ./images//questao1.png  used on input line 202.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
-
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 194--195
+ [4 <./images//questao1.png>]
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 222--223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[4 <./images//questao1.png>] [5]
-<./images//questao2.png, id=34, 1110.0672pt x 544.9158pt>
+
+Overfull \hbox (225.9828pt too wide) in paragraph at lines 226--228
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[5]
+<./images//questao2.png, id=36, 1110.0672pt x 544.9158pt>
 File: ./images//questao2.png Graphic file (type png)
 <use ./images//questao2.png>
-Package pdftex.def Info: ./images//questao2.png  used on input line 213.
+Package pdftex.def Info: ./images//questao2.png  used on input line 268.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
-
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 234--235
+ [6 <./images//questao2.png>]
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 289--290
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[6 <./images//questao2.png>] [7]
-<./images//questao3.png, id=43, 1110.0672pt x 544.9158pt>
+[7]
+<./images//questao3.png, id=45, 1110.0672pt x 544.9158pt>
 File: ./images//questao3.png Graphic file (type png)
 <use ./images//questao3.png>
-Package pdftex.def Info: ./images//questao3.png  used on input line 253.
+Package pdftex.def Info: ./images//questao3.png  used on input line 307.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
 
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 273--274
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 327--328
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [8 <./images//questao3.png>] [9]
-<./images//questao4.png, id=51, 1110.0672pt x 544.9158pt>
+<./images//questao4.png, id=53, 1110.0672pt x 544.9158pt>
 File: ./images//questao4.png Graphic file (type png)
 <use ./images//questao4.png>
-Package pdftex.def Info: ./images//questao4.png  used on input line 292.
+Package pdftex.def Info: ./images//questao4.png  used on input line 345.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
 
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 312--313
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 365--366
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [10 <./images//questao4.png>] [11] [12]
-<./images//nyquist.png, id=62, 1110.0672pt x 544.9158pt>
+<./images//nyquist.png, id=64, 1110.0672pt x 544.9158pt>
 File: ./images//nyquist.png Graphic file (type png)
 <use ./images//nyquist.png>
-Package pdftex.def Info: ./images//nyquist.png  used on input line 348.
+Package pdftex.def Info: ./images//nyquist.png  used on input line 401.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
  [13 <./images//nyquist.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 5685 strings out of 478338
- 89318 string characters out of 2836700
- 434343 words of memory out of 3000000
- 24049 multiletter control sequences out of 15000+600000
+ 5686 strings out of 478338
+ 89331 string characters out of 2836700
+ 443343 words of memory out of 3000000
+ 24050 multiletter control sequences out of 15000+600000
  477182 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,62p,377b,1687s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (13 pages, 1115833 bytes).
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (13 pages, 1158013 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
