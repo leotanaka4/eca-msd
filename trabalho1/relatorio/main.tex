@@ -62,13 +62,15 @@ função de transferência dada por:
     H(s) = \frac{100}{16} \frac{s^2 + 16}{s^2 + 0.2s + 100}
 \end{equation}
 
-\quad Com essa função de transferência, é possível obter os zeros e pólos do sistema utilizando a Fórmula de Bhaskara no numerador e denominador da função de transferência.
-Os valores dos zeros e pólos do sistema são:
-$z_1 = 4j$, $z_2 = -4j$, $p_1 = -0,1 + 9,9995j$ e $p_2 = -0,1 - 9,9995j$.
+\quad Com essa função de transferência,
+é possível obter os zeros e pólos do sistema utilizando a Fórmula de Bhaskara no numerador e denominador da função de transferência:
 
 \begin{equation}
     x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 \end{equation}
+
+\quad Os valores dos zeros e pólos do sistema são:
+$z_1 = 4j$, $z_2 = -4j$, $p_1 = -0,1 + 9,9995j$ e $p_2 = -0,1 - 9,9995j$.
 
 \quad Plotando o Diagrama de Bode em Python com o seguinte código:
 
@@ -81,12 +83,10 @@ $z_1 = 4j$, $z_2 = -4j$, $p_1 = -0,1 + 9,9995j$ e $p_2 = -0,1 - 9,9995j$.
 \begin{lstlisting}
 import control as ctrl
 import matplotlib.pyplot as plt
-    
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 H = ctrl.TransferFunction(num, den)
-    
 # 2. Plotar o diagrama de Bode
 ctrl.bode_plot(H)
 plt.show()    
@@ -96,8 +96,7 @@ plt.show()
 usada para analisar o comportamento de um sistema em frequências diferentes.
 Ele é usado para plotar a resposta em frequência de um sistema,
 mostrando como a amplitude e a fase de um sinal de entrada mudam em relação à frequência.
-
-\quad Então, é possível que observar pelo diagrama de Bode que haverá comportamento bem característicos nas frequências de 1 rad/s,
+Então, é possível observar pelo diagrama de Bode que haverá comportamento bem característicos nas frequências de 1 rad/s,
 4 rad/s, 10 rad/s e 100 rad/s em suas magnitudes e fases,
 que são justamente as frequências dos cossenos escolhidos para entrada do sistema nas questões propostas.
 
@@ -113,15 +112,12 @@ que são justamente as frequências dos cossenos escolhidos para entrada do sist
 import numpy as np
 import matplotlib.pyplot as plt
 import control as ctrl
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 sys = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-
 # 2. Calcular a resposta ao impulso
 t, h = ctrl.impulse_response(sys)
-
 # 3. Plotar do grafico da resposta ao impulso
 plt.plot(t, h)
 plt.xlabel('t(s)')
@@ -145,9 +141,13 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
     Y(s) = H(s)U(s) = \frac{100}{16} \frac{s^2 + 16}{s^2 + 0.2s + 100} \frac{s}{s^2 + \omega^2} = \frac{100}{16} \left[ \frac{k_1s + k_2}{s^2 + 0.2s + 100} + \frac{k_3s + k_4}{s^2 + \omega^2} \right] 
 \end{equation}
 
+\quad Para determinar os valores de $k_1$, $k_2$, $k_3$ e $k_4$, podemos igualar o numerador da função original aos numeradores das frações parciais:
+
 \begin{equation}
     s^3 + 16s = k_1s^3 + k_2s^2 + k_1\omega^2 s + k_2\omega^2 + k_3s^3 + 0.2k_3s^2 + 100k_3s + k_4s^2 + 0.2k_4s + 100k_4
 \end{equation}
+
+\quad Montando o sistema de equações resultante com a frequência $\omega$ para ser utlizado no desenvolvimento:
 
 \begin{equation}
     \left\{
@@ -160,15 +160,11 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
     \right. 
 \end{equation}
 
-\quad Foi feito isso para que não seja necessário repetir procedimentos no desenvolvimento do trabalho.
-
 \newpage
 
 \section{Desenvolvimento}
 
-\quad 1. Foi considerado uma entrada $u(t) = cos(t) 1(t)$. Foi obtido a $y(t)$ por simulação numérica.
-
-\quad (a) Solução analítica ($\omega = 1$):
+\quad 1. Foi considerado uma entrada $u(t) = cos(t) 1(t)$. Foi obtido a $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 1$):
 
 \begin{equation}
     \left\{
@@ -181,17 +177,25 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
     \right. 
 \end{equation}
 
+\quad Obtendo a solução do sistema, por meio da utilização da calculadora científica:
+
 \begin{equation}
     k_1 = 0.8484; k_2 = -0.0306; k_3 = 0.1515; k_4 = 0.0003.
 \end{equation}
+
+\quad Substituindo $k_1$, $k_2$, $k_3$ e $k_4$ pelos valores encontrados na Transformada de Laplace da saída $Y(s)$:
 
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{0.8484s -0.0306}{(s + 0.1)^2 + 99.99} + \frac{0.1515s + 0.0003}{s^2 + 1^2} \right]
 \end{equation}
 
+\quad Organizando a função para faciltar a aplicação da Transformada Inversa de Laplace:
+
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{0.8484(s + 0.1)}{(s + 0.1)^2 + 9.999^2} - \frac{0.0115 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} +\frac{0.1515s}{s^2 + 1^2} + \frac{0.0003}{s^2 + 1^2} \right]
 \end{equation}
+
+\quad Aplicação da Transformada de Laplace de Laplace Inversa:
 
 \begin{equation}
     y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ 0.8484e^{-0.1t}cos(9.999t) - 0.0115e^{-0.1t}sin(9.999t) + 0.1515cos(t) + 0.0003sin(t) \right] 1(t)
@@ -199,7 +203,7 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.45]{questao1.png}
+    \includegraphics[scale=0.4]{questao1.png}
     \caption{Resposta ao cosseno com frequência 1 multiplicado pelo degrau unitario}
 \end{figure}
 
@@ -207,25 +211,19 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
 import numpy as np
 import control as ctrl
 import matplotlib.pyplot as plt
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 sys = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-
 # 2. Definir os valores de tempo para simulacao
 t = np.linspace(0, 4*np.pi, 10000)  # valores de tempo de 0 a 4*pi segundos
-
 # 3. Definir o sinal de entrada como o cosseno multiplicado pelo degrau unitario
 u = np.heaviside(t, 1) * np.cos(t)
-
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
-
 # 5. Resposta analitica
 y_a = 100/16*(0.8484*np.exp(-0.1*t)*np.cos(9.999*t)-0.0115*np.exp(-0.1*t)*np.sin(9.999*t) +
     0.1515*np.cos(t) + 0.0003*np.sin(t))
-
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
 plt.plot(t, y_a)
@@ -237,9 +235,7 @@ plt.show()
 
 \newpage
 
-\quad 2. Foi considerado uma entrada $u(t) = cos(4 t) 1(t)$ (frequência de zero). Foi obtido a resposta $y(t)$ por simulação numérica.
-
-\quad (a) Solução analítica ($\omega = 4$):
+\quad 2. Foi considerado uma entrada $u(t) = cos(4 t) 1(t)$ (frequência de zero). Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 4$):
 
 \begin{equation}
     \left\{
@@ -252,13 +248,20 @@ plt.show()
     \right. 
 \end{equation}
 
+\quad Obtendo a solução do sistema, por meio da utilização da calculadora científica:
+
 \begin{equation}
     k_1 = 1; k_2 = 0; k_3 = 0; k_4 = 0.
 \end{equation}
 
+\quad Substituindo $k_1$, $k_2$, $k_3$ e $k_4$ pelos valores encontrados na Transformada de Laplace da saída $Y(s)$.
+Organizando a função para faciltar a aplicação da Transformada Inversa de Laplace:
+
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{s}{(s + 0.1)^2 + 99.99} \right] = \frac{100}{16} \left[ \frac{(s + 0.1)}{(s + 0.1)^2 + 9.999^2} - \frac{0.01 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} \right]
 \end{equation}
+
+\quad Aplicação da Transformada de Laplace de Laplace Inversa:
 
 \begin{equation}
     y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) - 0.01e^{-0.1t}sin(9.999t) \right] 1(t)
@@ -266,7 +269,7 @@ plt.show()
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.45]{questao2.png}
+    \includegraphics[scale=0.4]{questao2.png}
     \caption{Resposta ao cosseno com frequência 4 multiplicado pelo degrau unitario}
 \end{figure}
 
@@ -275,24 +278,18 @@ plt.show()
 import numpy as np
 import control as ctrl
 import matplotlib.pyplot as plt
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 sys = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-
 # 2. Definir os valores de tempo para simulacao
 t = np.linspace(0, 4*np.pi, 10000)  # valores de tempo de 0 a 4*pi segundos
-
 # 3. Definir o sinal de entrada como o cosseno multiplicado pelo degrau unitario
 u = np.heaviside(t, 1) * np.cos(4*t)
-
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
-
 # 5. Resposta analitica
 y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)-0.01*np.exp(-0.1*t)*np.sin(9.999*t))
-
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
 plt.plot(t, y_a)
@@ -303,9 +300,7 @@ plt.show()
 
 \newpage
 
-\quad 3. Foi considerado uma entrada $u(t) = cos(10 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica.
-
-\quad (a) Solução analítica ($\omega = 10$):
+\quad 3. Foi considerado uma entrada $u(t) = cos(10 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 10$):
 
 \begin{equation}
     \left\{
@@ -318,17 +313,25 @@ plt.show()
     \right. 
 \end{equation}
 
+\quad Obtendo a solução do sistema, por meio da utilização da calculadora científica:
+
 \begin{equation}
     k_1 = 1; k_2 = 420; k_3 = 0; k_4 = -420.
 \end{equation}
+
+\quad Substituindo $k_1$, $k_2$, $k_3$ e $k_4$ pelos valores encontrados na Transformada de Laplace da saída $Y(s)$:
 
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{s+420}{(s + 0.1)^2 + 99.99} - \frac{420}{s^2 + 10^2} \right]
 \end{equation}
 
+\quad Organizando a função para faciltar a aplicação da Transformada Inversa de Laplace:
+
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{(s + 0.1)}{(s + 0.1)^2 + 9.999^2} + \frac{42.0320 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} - \frac{42 \cdot 10}{s^2 + 10^2} \right]
 \end{equation}
+
+\quad Aplicação da Transformada de Laplace de Laplace Inversa:
 
 \begin{equation}
     y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) + 42.0320e^{-0.1t}sin(9.999t) - 42sin(10t) \right] 1(t)
@@ -336,7 +339,7 @@ plt.show()
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.45]{questao3.png}
+    \includegraphics[scale=0.4]{questao3.png}
     \caption{Resposta ao cosseno com frequência 10 multiplicado pelo degrau unitario}
 \end{figure}
 
@@ -344,25 +347,19 @@ plt.show()
 import numpy as np
 import control as ctrl
 import matplotlib.pyplot as plt
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 sys = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-
 # 2. Definir os valores de tempo para simulacao
 t = np.linspace(0, 4*np.pi, 10000)  # valores de tempo de 0 a 4*pi segundos
-
 # 3. Definir o sinal de entrada como o cosseno multiplicado pelo degrau unitario
 u = np.heaviside(t, 1) * np.cos(10*t)
-
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
-
 # 5. Resposta analitica
 y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+42.0320*np.exp(-0.1*t)*np.sin(9.999*t)-
     42*np.sin(10*t))
-
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
 plt.plot(t, y_a)
@@ -373,9 +370,7 @@ plt.show()
 
 \newpage
 
-\quad 4. Foi considerado uma entrada $u(t) = cos(100 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica.
-
-\quad (a) Solução analítica ($\omega = 100$):
+\quad 4. Foi considerado uma entrada $u(t) = cos(100 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 100$):
 
 \begin{equation}
     \left\{
@@ -388,24 +383,33 @@ plt.show()
     \right. 
 \end{equation}
 
+\quad Obtendo a solução do sistema, por meio da utilização da calculadora científica:
+
 \begin{equation}
     k_1 = -0.0085; k_2 = 0.0020; k_3 = 1.0085; k_4 = -0.2037.
 \end{equation}
+
+\quad Substituindo $k_1$, $k_2$, $k_3$ e $k_4$ pelos valores encontrados na Transformada de Laplace da saída $Y(s)$:
 
 \begin{equation}
     Y(s) = \frac{100}{16} \left[ \frac{-0.0085s+0.0020}{(s + 0.1)^2 + 99.99} + \frac{1.0085s -0.2037}{s^2 + 100^2} \right]
 \end{equation}
 
+\quad Organizando a função para faciltar a aplicação da Transformada Inversa de Laplace:
+
 \begin{equation}
     Y(s) = \frac{100}{16} \left[-\frac{0.0085(s + 0.1)}{(s + 0.1)^2 + 9.999^2} + \frac{0.0010 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} + \frac{1.0085s}{s^2 + 100^2} - \frac{0.0002 \cdot 100}{s^2 + 100^2} \right]
 \end{equation}
 
+\quad Aplicação da Transformada de Laplace de Laplace Inversa:
+
 \begin{equation}
     y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[-0.0085e^{-0.1t}cos(9.999t)+0.0010e^{-0.1t}sin(9.999t) + 1.0085cos(100t) - 0.0002sin(100t) \right] 1(t)
 \end{equation}
+
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.45]{questao4.png}
+    \includegraphics[scale=0.4]{questao4.png}
     \caption{Resposta ao cosseno com frequência multiplicado pelo degrau unitario}
 \end{figure}
 
@@ -413,26 +417,19 @@ plt.show()
 import numpy as np
 import control as ctrl
 import matplotlib.pyplot as plt
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 sys = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-
 # 2. Definir os valores de tempo para simulacao
 t = np.linspace(0, 4*np.pi, 10000)  # valores de tempo de 0 a 4*pi segundos
-
 # 3. Definir o sinal de entrada como o cosseno multiplicado pelo degrau unitario
 u = np.heaviside(t, 1) * np.cos(100*t)
-
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout = ctrl.forced_response(sys, T=t, U=u)
-
 # 5. Resposta analitica
 y_a = 100/16*(-0.0085*np.exp(-0.1*t)*np.cos(9.999*t)+0.0010*np.exp(-0.1*t)*np.sin(9.999*t)+
     1.0085*np.cos(100*t)-0.0002*np.sin(100*t))
-
-
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
 plt.plot(t, y_a)

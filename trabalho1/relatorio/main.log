@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  11 MAY 2023 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  12 MAY 2023 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,7 +276,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <./images//bode.png, id=1, 1110.0672pt x 544.9158pt>
 File: ./images//bode.png Graphic file (type png)
 <use ./images//bode.png>
-Package pdftex.def Info: ./images//bode.png  used on input line 77.
+Package pdftex.def Info: ./images//bode.png  used on input line 79.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [1
 
@@ -284,21 +284,21 @@ Package pdftex.def Info: ./images//bode.png  used on input line 77.
 <./images//impulso.png, id=16, 1110.0672pt x 544.9158pt>
 File: ./images//impulso.png Graphic file (type png)
 <use ./images//impulso.png>
-Package pdftex.def Info: ./images//impulso.png  used on input line 108.
+Package pdftex.def Info: ./images//impulso.png  used on input line 107.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [2 <./images//impulso.png>] [3]
 <./images//questao1.png, id=25, 1110.0672pt x 544.9158pt>
 File: ./images//questao1.png Graphic file (type png)
 <use ./images//questao1.png>
-Package pdftex.def Info: ./images//questao1.png  used on input line 202.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+Package pdftex.def Info: ./images//questao1.png  used on input line 206.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [4 <./images//questao1.png>]
 Overfull \hbox (9.9806pt too wide) in paragraph at lines 222--223
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.98055pt too wide) in paragraph at lines 226--227
+Overfull \hbox (3.98055pt too wide) in paragraph at lines 225--226
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -306,10 +306,10 @@ Overfull \hbox (3.98055pt too wide) in paragraph at lines 226--227
 <./images//questao2.png, id=36, 1110.0672pt x 544.9158pt>
 File: ./images//questao2.png Graphic file (type png)
 <use ./images//questao2.png>
-Package pdftex.def Info: ./images//questao2.png  used on input line 269.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+Package pdftex.def Info: ./images//questao2.png  used on input line 272.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [6 <./images//questao2.png>]
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 290--291
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 289--290
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -317,10 +317,10 @@ Overfull \hbox (9.9806pt too wide) in paragraph at lines 290--291
 <./images//questao3.png, id=45, 1110.0672pt x 544.9158pt>
 File: ./images//questao3.png Graphic file (type png)
 <use ./images//questao3.png>
-Package pdftex.def Info: ./images//questao3.png  used on input line 339.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+Package pdftex.def Info: ./images//questao3.png  used on input line 342.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [8 <./images//questao3.png>]
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 359--360
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 358--359
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -328,15 +328,15 @@ Overfull \hbox (9.9806pt too wide) in paragraph at lines 359--360
 <./images//questao4.png, id=53, 1110.0672pt x 544.9158pt>
 File: ./images//questao4.png Graphic file (type png)
 <use ./images//questao4.png>
-Package pdftex.def Info: ./images//questao4.png  used on input line 408.
-(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+Package pdftex.def Info: ./images//questao4.png  used on input line 412.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [10 <./images//questao4.png>]
 Overfull \hbox (9.9806pt too wide) in paragraph at lines 428--429
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.98055pt too wide) in paragraph at lines 432--433
+Overfull \hbox (3.98055pt too wide) in paragraph at lines 431--432
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -344,19 +344,19 @@ Overfull \hbox (3.98055pt too wide) in paragraph at lines 432--433
 <./images//nyquist.png, id=64, 1110.0672pt x 544.9158pt>
 File: ./images//nyquist.png Graphic file (type png)
 <use ./images//nyquist.png>
-Package pdftex.def Info: ./images//nyquist.png  used on input line 468.
+Package pdftex.def Info: ./images//nyquist.png  used on input line 465.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
  [13 <./images//nyquist.png>] (main.aux) ) 
 Here is how much of TeX's memory you used:
  5686 strings out of 478338
  89331 string characters out of 2836700
- 444343 words of memory out of 3000000
+ 443343 words of memory out of 3000000
  24050 multiletter control sequences out of 15000+600000
  477182 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,62p,377b,1687s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (13 pages, 1275020 bytes).
+Output written on main.pdf (13 pages, 1276367 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
