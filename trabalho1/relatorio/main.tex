@@ -45,9 +45,9 @@
 \author{
     Leonardo Soares da Costa Tanaka - DRE: 121067652 \\
     Engenharia de Controle e Automação/UFRJ \\
-    Rio de Janeiro, Brasil
+    Rio de Janeiro, Brasil \\
+    Maio de 2023
 }
-
 \date{}
 
 \begin{document}
@@ -71,7 +71,7 @@ função de transferência dada por:
 \end{equation}
 
 \quad Os valores dos zeros e pólos do sistema são:
-$z_1 = 4j$, $z_2 = -4j$, $p_1 = -0,1 + 9,9995j$ e $p_2 = -0,1 - 9,9995j$.
+$z_1 = 4j$, $z_2 = -4j$, $p_1 = -0.1 + 9.9995j$ e $p_2 = -0.1 - 9.9995j$.
 
 \quad Plotando o Diagrama de Bode em Python com o seguinte código:
 
@@ -584,11 +584,13 @@ porque foram utilizados dois gráficos com intervalos diferentes de amostragem
 A localização dos pólos determina a estabilidade do sistema e a rapidez com que ele responde a uma entrada.
 Se os pólos estiverem na parte direita do plano complexo, o sistema é instável e não pode ser usado em aplicações práticas.
 Por outro lado, se os pólos estiverem na parte esquerda do plano complexo, o sistema é estável e pode ser utilizado em aplicações práticas.
+Esse é o caso sistema linear do trabalho que possui dois pólos complexos conjugados com parte real negativa ($p_1 = -0.1 + 9.9995j$ e $p_2 = -0.1 - 9.9995j$).
 
 \quad Além disso, a localização dos pólos também afeta a rapidez com que o sistema responde a uma entrada.
 Quanto mais longe os pólos estiverem do eixo imaginário, mais rápido será a resposta do sistema. Por outro lado,
 os zeros afetam a forma como o sistema responde a diferentes frequências de entrada.
-Um zero em uma frequência específica anula a resposta do sistema a essa frequência,
+Um zero em uma frequência específica anula a resposta do sistema a essa frequência
+(o que ocorre na questão 3(c) e é explicado nesse tópico),
 enquanto um zero próximo a uma frequência específica pode reduzir a amplitude da resposta do sistema a essa frequência.
 
 \quad Portanto, entender a localização dos pólos e zeros em um sistema linear é crucial para projetar sistemas estáveis e prever sua resposta a diferentes entradas.
