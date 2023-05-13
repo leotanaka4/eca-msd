@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  12 MAY 2023 19:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  12 MAY 2023 22:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -189,27 +189,30 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
- (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+ (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count284
 \l__pdf_internal_box=\box55
 ) (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 52.
-LaTeX Font Info:    ... okay on input line 52.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -265,18 +268,18 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 \c@lstlisting=\count291
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <./images//bode.png, id=1, 1110.0672pt x 544.9158pt>
 File: ./images//bode.png Graphic file (type png)
 <use ./images//bode.png>
-Package pdftex.def Info: ./images//bode.png  used on input line 79.
+Package pdftex.def Info: ./images//bode.png  used on input line 80.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [1
 
@@ -284,81 +287,116 @@ Package pdftex.def Info: ./images//bode.png  used on input line 79.
 <./images//impulso.png, id=16, 1110.0672pt x 544.9158pt>
 File: ./images//impulso.png Graphic file (type png)
 <use ./images//impulso.png>
-Package pdftex.def Info: ./images//impulso.png  used on input line 107.
+Package pdftex.def Info: ./images//impulso.png  used on input line 108.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [2 <./images//impulso.png>] [3]
 <./images//questao1.png, id=25, 1110.0672pt x 544.9158pt>
 File: ./images//questao1.png Graphic file (type png)
 <use ./images//questao1.png>
-Package pdftex.def Info: ./images//questao1.png  used on input line 206.
+Package pdftex.def Info: ./images//questao1.png  used on input line 207.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
  [4 <./images//questao1.png>]
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 222--223
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 223--224
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (3.98055pt too wide) in paragraph at lines 225--226
+Overfull \hbox (3.98055pt too wide) in paragraph at lines 226--227
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [5]
-<./images//questao2.png, id=36, 1110.0672pt x 544.9158pt>
+<./images//erro1.png, id=36, 1110.0672pt x 544.9158pt>
+File: ./images//erro1.png Graphic file (type png)
+<use ./images//erro1.png>
+Package pdftex.def Info: ./images//erro1.png  used on input line 256.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [6 <./images//erro1.png>]
+<./images//questao2.png, id=41, 1110.0672pt x 544.9158pt>
 File: ./images//questao2.png Graphic file (type png)
 <use ./images//questao2.png>
-Package pdftex.def Info: ./images//questao2.png  used on input line 272.
+Package pdftex.def Info: ./images//questao2.png  used on input line 303.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [6 <./images//questao2.png>]
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 289--290
+ [7 <./images//questao2.png>]
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 320--321
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[7]
-<./images//questao3.png, id=45, 1110.0672pt x 544.9158pt>
+[8]
+<./images//erro2.png, id=50, 1110.0672pt x 544.9158pt>
+File: ./images//erro2.png Graphic file (type png)
+<use ./images//erro2.png>
+Package pdftex.def Info: ./images//erro2.png  used on input line 351.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [9 <./images//erro2.png>]
+<./images//questao3.png, id=55, 1110.0672pt x 544.9158pt>
 File: ./images//questao3.png Graphic file (type png)
 <use ./images//questao3.png>
-Package pdftex.def Info: ./images//questao3.png  used on input line 342.
+Package pdftex.def Info: ./images//questao3.png  used on input line 412.
 (pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [8 <./images//questao3.png>]
-Overfull \hbox (9.9806pt too wide) in paragraph at lines 358--359
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-[9]
-<./images//questao4.png, id=53, 1110.0672pt x 544.9158pt>
-File: ./images//questao4.png Graphic file (type png)
-<use ./images//questao4.png>
-Package pdftex.def Info: ./images//questao4.png  used on input line 412.
-(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
- [10 <./images//questao4.png>]
+ [10 <./images//questao3.png>]
 Overfull \hbox (9.9806pt too wide) in paragraph at lines 428--429
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Overfull \hbox (3.98055pt too wide) in paragraph at lines 431--432
+[11]
+<./images//erro3.png, id=63, 1110.0672pt x 544.9158pt>
+File: ./images//erro3.png Graphic file (type png)
+<use ./images//erro3.png>
+Package pdftex.def Info: ./images//erro3.png  used on input line 459.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [12 <./images//erro3.png>]
+<./images//questao4.png, id=68, 1110.0672pt x 544.9158pt>
+File: ./images//questao4.png Graphic file (type png)
+<use ./images//questao4.png>
+Package pdftex.def Info: ./images//questao4.png  used on input line 513.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+<./images//questao4_zoom.png, id=69, 1110.0672pt x 544.9158pt>
+File: ./images//questao4_zoom.png Graphic file (type png)
+<use ./images//questao4_zoom.png>
+Package pdftex.def Info: ./images//questao4_zoom.png  used on input line 519.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [13 <./images//questao4.png>]
+Overfull \hbox (9.9806pt too wide) in paragraph at lines 535--536
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[11] [12]
-<./images//nyquist.png, id=64, 1110.0672pt x 544.9158pt>
+
+Overfull \hbox (3.98055pt too wide) in paragraph at lines 538--539
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[14 <./images//questao4_zoom.png>]
+<./images//erro4.png, id=79, 1110.0672pt x 544.9158pt>
+File: ./images//erro4.png Graphic file (type png)
+<use ./images//erro4.png>
+Package pdftex.def Info: ./images//erro4.png  used on input line 565.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [15 <./images//erro4.png>] [16]
+<./images//nyquist.png, id=87, 1110.0672pt x 544.9158pt>
 File: ./images//nyquist.png Graphic file (type png)
 <use ./images//nyquist.png>
-Package pdftex.def Info: ./images//nyquist.png  used on input line 465.
+Package pdftex.def Info: ./images//nyquist.png  used on input line 603.
 (pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
- [13 <./images//nyquist.png>] (main.aux) ) 
+ [17 <./images//nyquist.png>]
+<./images//nichols.png, id=92, 1110.0672pt x 544.9158pt>
+File: ./images//nichols.png Graphic file (type png)
+<use ./images//nichols.png>
+Package pdftex.def Info: ./images//nichols.png  used on input line 625.
+(pdftex.def)             Requested size: 499.52563pt x 245.20984pt.
+ [18 <./images//nichols.png>] [19] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 5686 strings out of 478338
- 89331 string characters out of 2836700
- 443343 words of memory out of 3000000
- 24050 multiletter control sequences out of 15000+600000
- 477182 words of font info for 59 fonts, out of 8000000 for 9000
+ 5839 strings out of 478338
+ 91960 string characters out of 2836700
+ 448458 words of memory out of 3000000
+ 24191 multiletter control sequences out of 15000+600000
+ 477696 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,12n,62p,377b,1687s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on main.pdf (13 pages, 1276367 bytes).
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (19 pages, 2283037 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
+ 162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

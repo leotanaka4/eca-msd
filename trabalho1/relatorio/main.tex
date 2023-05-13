@@ -10,6 +10,7 @@
 \usepackage{fancyhdr}
 \usepackage{setspace}
 \usepackage{listings}
+\usepackage{url}
 
 \graphicspath{ {./images/} }
 
@@ -164,7 +165,7 @@ No exemplo do trabalho, é possível perceber que a resposta ao impulso, é uma 
 
 \section{Desenvolvimento}
 
-\quad 1. Foi considerado uma entrada $u(t) = cos(t) 1(t)$. Foi obtido a $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 1$):
+\quad 1. Foi considerado uma entrada $u(t) = cos(t) 1(t)$. Foi obtido a $y(t)$ por simulação numérica. Solução analítica ($\omega = 1$):
 
 \begin{equation}
     \left\{
@@ -233,9 +234,39 @@ plt.grid()
 plt.show()
 \end{lstlisting}
 
+(a) A resposta coincide com o esperado na solução analítica?
+
+\quad Sim, porque os valores obtidos graficamente da simulação numérica coincidiu bastante com a solução analítica.
+Podendo observar essa coincidência entre os métodos pela Figura 3 em que os dois traçados dos gráficos se sobressaem.
+Além disso, é possível observar o comportamento tanto de senoídes quanto de senoídes exponencialmente amortecidas.
+
+\quad Observando a Figura 4 a seguir, é possível observar que existe um erro quadrático considerável
+ao percorrer um intervalo de 4$\pi$ que é causado tanto pela aproximação numérica feita pela linguagem Python e biblioteca Numpy
+quanto pelo erro de arredondamento na solução analítica.
+
+\begin{lstlisting}
+    # 7. Calculando o erro quadratico
+    y_error = (yout-y_a)**2
+\end{lstlisting}
+
 \newpage
 
-\quad 2. Foi considerado uma entrada $u(t) = cos(4 t) 1(t)$ (frequência de zero). Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 4$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{erro1.png}
+    \caption{Erro quadrático $(\omega = 1)$}
+\end{figure}
+
+(b) Que frequências aparecem na resposta? A que estâo associadas estas frequências?
+
+\quad Observando a Figura 3, as frequências que aparecem na resposta são aproximadamente 1 rad/s e 9.999 rad/s.
+A frequência 1 rad/s está relacionada a entrada que é um cosseno de frequência 1 rad/s.
+Além disso, a frequência 9.999 rad/s está relacionada a função de transferência do sistema
+que possui uma resposta ao impulso sendo uma senoíde exponencialmente amortecida de frequência 9.999 rad/s.
+
+\newpage
+
+\quad 2. Foi considerado uma entrada $u(t) = cos(4 t) 1(t)$ (frequência de zero). Foi obtido a resposta $y(t)$ por simulação numérica. Solução analítica ($\omega = 4$):
 
 \begin{equation}
     \left\{
@@ -298,9 +329,48 @@ plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
 
+(a) A resposta coincide com o esperado na solução analítica?
+
+\quad Sim, porque os valores obtidos graficamente da simulação numérica coincidiu bastante com a solução analítica.
+Podendo observar essa coincidência entre os métodos pela Figura 5 em que os dois traçados dos gráficos se sobressaem.
+Além disso, é possível observar o comportamento de uma senoíde exponencialmente amortecida.
+
+\quad Observando a Figura 6 a seguir, é possível observar que existe um erro quadrático considerável
+ao percorrer um intervalo de 4$\pi$ que é causado tanto pela aproximação numérica feita pela linguagem Python e biblioteca Numpy
+quanto pelo erro de arredondamento na solução analítica.
+
+\begin{lstlisting}
+    # 7. Calculando o erro quadratico
+    y_error = (yout-y_a)**2
+\end{lstlisting}
+
 \newpage
 
-\quad 3. Foi considerado uma entrada $u(t) = cos(10 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 10$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{erro2.png}
+    \caption{Erro quadrático $(\omega = 4)$}
+\end{figure}
+
+(b) Que frequências aparecem na resposta? A que estâo associadas estas frequências?
+
+\quad Observando a Figura 5, a única frequência que aparece na resposta é aproximadamente 9.999 rad/s.
+A frequência 9.999 rad/s está relacionada a função de transferência do sistema
+que possui uma resposta ao impulso sendo uma senoíde exponencialmente amortecida.
+
+(c) Aparece a frequência 4 rad/s na resposta? Caso negativo, porque?
+
+\quad Não aparece a frequência 4 rad/s na resposta. Porque, os zeros da função de transferência afetam a resposta em frequência do sistema,
+anulando a amplitude da resposta nessa frequência específica.
+Quando a entrada é um cosseno com frequência igual a 4 rad/s,
+a função de transferência do sistema irá multiplicar essa entrada pelos fatores (s - 4j) e (s + 4j).
+Como ambos os zeros estão localizados em $\pm$ 4j na parte imaginária do plano complexo,
+esses fatores serão iguais a zero na frequência de 4 rad/s,
+o que significa que a resposta do sistema a essa frequência será nula.
+
+\newpage
+
+\quad 3. Foi considerado uma entrada $u(t) = cos(10 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. Solução analítica ($\omega = 10$):
 
 \begin{equation}
     \left\{
@@ -328,13 +398,13 @@ plt.show()
 \quad Organizando a função para faciltar a aplicação da Transformada Inversa de Laplace:
 
 \begin{equation}
-    Y(s) = \frac{100}{16} \left[ \frac{(s + 0.1)}{(s + 0.1)^2 + 9.999^2} + \frac{42.0320 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} - \frac{42 \cdot 10}{s^2 + 10^2} \right]
+    Y(s) = \frac{100}{16} \left[ \frac{(s + 0.1)}{(s + 0.1)^2 + 9.999^2} + \frac{41.9941 \cdot 9.999}{(s + 0.1)^2 + 9.999^2} - \frac{42 \cdot 10}{s^2 + 10^2} \right]
 \end{equation}
 
 \quad Aplicação da Transformada de Laplace de Laplace Inversa:
 
 \begin{equation}
-    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) + 42.0320e^{-0.1t}sin(9.999t) - 42sin(10t) \right] 1(t)
+    y(t) = \mathcal{L}^{-1} \{Y(s) \} = \frac{100}{16} \left[ e^{-0.1t}cos(9.999t) + 41.9941e^{-0.1t}sin(9.999t) - 42sin(10t) \right] 1(t)
 \end{equation}
 
 \begin{figure}[h]
@@ -358,7 +428,7 @@ u = np.heaviside(t, 1) * np.cos(10*t)
 # 4. Realizar a simulacao da resposta do sistema usando a funcao `control.forced_response()`
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 # 5. Resposta analitica
-y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+42.0320*np.exp(-0.1*t)*np.sin(9.999*t)-
+y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+41.9941*np.exp(-0.1*t)*np.sin(9.999*t)-
     42*np.sin(10*t))
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
@@ -368,9 +438,40 @@ plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
 
+(a) A resposta coincide com o esperado na solução analítica?
+
+\quad Sim, porque os valores obtidos graficamente da simulação numérica coincidiu bastante com a solução analítica.
+Podendo observar essa coincidência entre os métodos pela Figura 7 em que os dois traçados dos gráficos se sobressaem.
+
+\quad Observando a Figura 8 a seguir, é possível observar que existe um erro quadrático 10 vezes maior que os demais
+ao percorrer um intervalo de 4$\pi$ que é causado tanto pela aproximação numérica feita pela linguagem Python e biblioteca Numpy
+quanto pelo erro de arredondamento na solução analítica.
+
+\begin{lstlisting}
+    # 7. Calculando o erro quadratico
+    y_error = (yout-y_a)**2
+\end{lstlisting}
+
 \newpage
 
-\quad 4. Foi considerado uma entrada $u(t) = cos(100 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. (a) Solução analítica ($\omega = 100$):
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{erro3.png}
+    \caption{Erro quadrático $(\omega = 10)$}
+\end{figure}
+
+(b) Que frequências aparecem na resposta? A que estâo associadas estas frequências?
+
+\quad As frequências que aparecem na resposta são aproximadamente 10 rad/s e 9.999 rad/s.
+A frequência 10 rad/s está relacionada a entrada que é um cosseno de frequência 10 rad/s.
+Além disso, a frequência 9.999 rad/s está relacionada a função de transferência do sistema
+que possui uma resposta ao impulso sendo uma senoíde exponencialmente amortecida.
+Porém, é muito difícil distinguir as duas freqûencias pelo fato de terem valores muito próximos e
+estarem em fase. Mesmo que seja aumentado o intervalo de amostragem ainda seria muito difícil de visualizar.
+
+\newpage
+
+\quad 4. Foi considerado uma entrada $u(t) = cos(100 t) 1(t)$. Foi obtido a resposta $y(t)$ por simulação numérica. Solução analítica ($\omega = 100$):
 
 \begin{equation}
     \left\{
@@ -413,6 +514,12 @@ plt.show()
     \caption{Resposta ao cosseno com frequência multiplicado pelo degrau unitario}
 \end{figure}
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{questao4_zoom.png}
+    \caption{Resposta com um intervalo menor}
+\end{figure}
+
 \begin{lstlisting}
 import numpy as np
 import control as ctrl
@@ -438,22 +545,53 @@ plt.ylabel('y(t)')
 plt.show()
 \end{lstlisting}
 
+(a) A resposta coincide com o esperado na solução analítica?
+
+\quad Sim, porque os valores obtidos graficamente da simulação numérica coincidiu bastante com a solução analítica.
+Podendo observar essa coincidência entre os métodos pelas figuras 9 e 10 em que os dois traçados dos gráficos se sobressaem.
+Além disso, é possível observar o comportamento tanto de senoídes quanto de senoídes exponencialmente amortecidas.
+
+\quad Observando a Figura 11 a seguir, é possível observar que existe um erro quadrático considerável
+ao percorrer um intervalo de 4$\pi$ que é causado tanto pela aproximação numérica feita pela linguagem Python e biblioteca Numpy
+quanto pelo erro de arredondamento na solução analítica.
+
+\begin{lstlisting}
+    # 7. Calculando o erro quadratico
+    y_error = (yout-y_a)**2
+\end{lstlisting}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.4]{erro4.png}
+    \caption{Erro quadrático $(\omega = 100)$}
+\end{figure}
+
+(b) Que frequências aparecem na resposta? A que estâo associadas estas frequências?
+
+\quad Observando as figuras 9 e 10, as frequências que aparecem na resposta são aproximadamente 100 rad/s e 9.999 rad/s.
+A frequência 100 rad/s está relacionada a entrada que é um cosseno de frequência 1.
+Além disso, a frequência 9.999 rad/s está relacionada a função de transferência do sistema
+que possui uma resposta ao impulso sendo uma senoíde exponencialmente amortecida.
+Só é possível observar essas duas frequências,
+porque foram utilizados dois gráficos com intervalos diferentes de amostragem
+
+
 \newpage
 
 \section{Conclusão}
 
-\quad A resposta de um sistema linear é afetada pela localização de seus pólos e zeros.
-Os pólos determinam a estabilidade e a forma como o sistema responde às diferentes entradas.
-Em geral, se o sistema tem pólos na parte direita do plano complexo (parte real positiva), o sistema é instável e não pode ser utilizado em aplicações práticas.
+\quad A conclusão é que os pólos e zeros de um sistema linear têm um impacto significativo em sua resposta.
+A localização dos pólos determina a estabilidade do sistema e a rapidez com que ele responde a uma entrada.
+Se os pólos estiverem na parte direita do plano complexo, o sistema é instável e não pode ser usado em aplicações práticas.
+Por outro lado, se os pólos estiverem na parte esquerda do plano complexo, o sistema é estável e pode ser utilizado em aplicações práticas.
 
-\quad Por outro lado, se os pólos estão na parte esquerda do plano complexo (parte real negativa), o sistema é estável e pode ser usado em aplicações práticas.
-A localização dos pólos também afeta a rapidez com que o sistema responde a uma entrada.
-Quanto mais longe os pólos estiverem do eixo imaginário, mais rápido será a resposta do sistema.
-
-\quad Os zeros, por outro lado, afetam a forma como o sistema responde a diferentes frequências de entrada.
+\quad Além disso, a localização dos pólos também afeta a rapidez com que o sistema responde a uma entrada.
+Quanto mais longe os pólos estiverem do eixo imaginário, mais rápido será a resposta do sistema. Por outro lado,
+os zeros afetam a forma como o sistema responde a diferentes frequências de entrada.
 Um zero em uma frequência específica anula a resposta do sistema a essa frequência,
 enquanto um zero próximo a uma frequência específica pode reduzir a amplitude da resposta do sistema a essa frequência.
 
+\quad Portanto, entender a localização dos pólos e zeros em um sistema linear é crucial para projetar sistemas estáveis e prever sua resposta a diferentes entradas.
 \newpage
 
 \section{Extras}
@@ -469,15 +607,50 @@ enquanto um zero próximo a uma frequência específica pode reduzir a amplitude
 \begin{lstlisting}
 import control as ctrl
 import matplotlib.pyplot as plt
-
 # 1. Definir a funcao de transferencia do sistema
 num = [100, 0, 1600]  # numerador da funcao de transferencia
 den = [16, 3.2, 1600]  # denominador da funcao de transferencia
 H = ctrl.TransferFunction(num, den)
-
 # 2. Plotar o diagrama de Nyquist
 ctrl.nyquist_plot(H)
 plt.show()
 \end{lstlisting}
+
+\newpage
+
+\quad Plotando o Diagrama de Nichols em Python com o seguinte código (Feito por curiosidade):
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.45]{nichols.png}
+    \caption{Diagrama de Nichols}
+\end{figure}
+
+\begin{lstlisting}
+import control as ctrl
+import matplotlib.pyplot as plt
+# 1. Definir a funcao de transferencia do sistema
+num = [100, 0, 1600]  # numerador da funcao de transferencia
+den = [16, 3.2, 1600]  # denominador da funcao de transferencia
+H = ctrl.TransferFunction(num, den)
+# 2. Plotar o diagrama de Nichols
+ctrl.nichols_plot(H)
+plt.grid()
+plt.show()
+\end{lstlisting}
+
+\newpage
+
+\begin{thebibliography}{99}
+    \bibitem{pythoncontrol} Documentação do Python Control. Disponível em: \url{https://python-control.readthedocs.io/en/0.9.3.post2/}. Acesso em: 06 de maio de 2023.
+    
+    \bibitem{numpy} Documentação do NumPy. Disponível em: \url{https://numpy.org/doc/stable/}. Acesso em: 06 de maio de 2023.
+    
+    \bibitem{matplotlib} Documentação do Matplotlib. Disponível em: \url{https://matplotlib.org/stable/api/index}. Acesso em: 06 de maio de 2023.
+
+    \bibitem{lathi} LATHI, B.P. \textit{Linear Systems and Signals}. 3rd ed. Oxford: Oxford University Press, 2018.
+
+    \bibitem{delnero} GOMES, A.C.N. Notas de Aula - Sinais e Sistemas (COE350). Universidade Federal do Rio de Janeiro, Rio de Janeiro, RJ, Brasil, 2022. Disponível em: \url{http://coep.ufrj.br/~afel/notas.pdf}. Acesso em: 06 de maio de 2023.
+\end{thebibliography}
 
 \end{document}

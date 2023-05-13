@@ -17,7 +17,7 @@ u = np.heaviside(t, 1) * np.cos(10*t)
 t_out, yout= ctrl.forced_response(sys, T=t, U=u)
 
 # 5. Resposta analitica
-y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+42.0320*np.exp(-0.1*t)*np.sin(9.999*t)-42*np.sin(10*t))
+y_a = 100/16*(np.exp(-0.1*t)*np.cos(9.999*t)+41.9941*np.exp(-0.1*t)*np.sin(9.999*t)-42*np.sin(10*t))
 
 # 6. Plotar o grafico da resposta
 plt.plot(t_out, yout)
