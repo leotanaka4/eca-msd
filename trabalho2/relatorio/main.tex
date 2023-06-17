@@ -92,8 +92,8 @@ realizando a Transformada de Laplace das equações:
 
 \begin{equation}
 \begin{aligned}
-    R_a \cdot i_a + L_a \frac{di_a}{dt} = V_a - e_c, \quad J_m \frac{d\omega_m}{dt} = T_m, \quad T_m = K_m \cdot i_a, \quad e_c = K_e \cdot \omega_m \\
-    I_a(s) = \frac{1/R_a}{\frac{L_a}{R_a}s + 1}(V_a(s) - e_c(s)), \quad \Omega(s) = \frac{1}{J_m s }T_m(s), \quad T_m(s) = K_m \cdot I_a(s), \quad E_c(s) = K_e\Omega_m(s)
+    R_a \cdot i_a + L_a \frac{di_a}{dt} = V_a - e_c, \quad J_{eq} \frac{d\omega_m}{dt} = T_m, \quad T_m = K_m \cdot i_a, \quad e_c = K_e \cdot \omega_m \\
+    I_a(s) = \frac{1/R_a}{\frac{L_a}{R_a}s + 1}(V_a(s) - e_c(s)), \quad \Omega(s) = \frac{1}{J_{eq} s }T_m(s), \quad T_m(s) = K_m \cdot I_a(s), \quad E_c(s) = K_e\Omega_m(s)
 \end{aligned}
 \end{equation}
 
@@ -141,7 +141,7 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
         minimum width=2cm, 
         minimum height=1.2cm,
         right=1cm of torque
-    ] (velocidade) {$\frac{1}{J_m s}$};
+    ] (velocidade) {$\frac{1}{J_{eq} s}$};
      
     % eletromotriz
     \node [draw,
@@ -179,9 +179,9 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
 
 \begin{equation}
     G(s) = \frac{\Omega_m(s)}{V_a(s)}
-    = \frac{\frac{K_m}{R_a \cdot J_m}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}{1 + \frac{K_e \cdot K_m}{R_a \cdot J_m}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}
-    = \frac{k_m}{R_a \cdot J_m \cdot s \cdot (\frac{L_a}{R_a}s + 1) + K_e \cdot K_m}
-    = \frac{\frac{k_m}{J_m \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_m \cdot L_a}}
+    = \frac{\frac{K_m}{R_a \cdot J_{eq}}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}{1 + \frac{K_e \cdot K_m}{R_a \cdot J_{eq}}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}
+    = \frac{k_m}{R_a \cdot J_{eq} \cdot s \cdot (\frac{L_a}{R_a}s + 1) + K_e \cdot K_m}
+    = \frac{\frac{k_m}{J_{eq} \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_{eq} \cdot L_a}}
 \end{equation}
 
 \quad 1.3. Representando o sistema no espaço de estados com a realização canónica controlável:
@@ -191,8 +191,8 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
     \dot{x} =
     \begin{bmatrix}
         0 && 1 \\
-        -\frac{K_e \cdot K_m}{J_m \cdot L_a} && -\frac{R_a}{L_a}
-    \end{bmatrix}
+        -\frac{K_e \cdot K_m}{J_{eq} \cdot L_a} && -\frac{R_a}{L_a}
+    \end{bmatrix} x
     +
     \begin{bmatrix}
         0 \\
@@ -201,9 +201,72 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
     u \\
     y =
     \begin{bmatrix}
-        \frac{k_m}{J_m \cdot L_a} && 0
-    \end{bmatrix}
+        \frac{k_m}{J_{eq} \cdot L_a} && 0
+    \end{bmatrix} x
 \end{aligned}
 \end{equation}
+
+\quad 1.4. Calculando a inércia do disco (feito de alumínio):
+
+\begin{equation}
+\begin{aligned}
+    J = \int r^2 dm
+    ,\quad \frac{dm}{M} = \frac{dA}{A} = \frac{2 \pi r dr}{\pi R^2}
+    ,\quad J_d = \int_{0}^{R} \frac{r^2 M 2 \pi r}{\pi R^2} dr
+    = \frac{2M}{R^2} \int_{0}^{R} r^3 dr
+    = \frac{2Mr^4}{4R^2} \Bigg|_{0}^{R}
+    = \frac{MR^2}{2} \\
+    J_d = \frac{0.068 \cdot 0.0248^2}{2} = 20.91136 \ 10^{-6} \ kgm^2
+\end{aligned}
+\end{equation}
+
+\quad Determinando momento de inércia total (rotor e disco),
+levando em consideração que estão conectadas no mesmo eixo de rotação e
+estão perfeitamente fixadas juntas. Podemos usar a seguinte fórmula e valores:
+
+\begin{equation}
+    J_{eq} = J_m + J_d = (1.16 \ 10^{-6} + 20.91136 \ 10^{-6}) \ kgm^2
+    = 22.07136 \ kgm^2
+\end{equation}
+
+\quad 1.6. Levando em consideração que não existe perturbação nem atrito,
+é possível determinar a velocidade máxima do motor $\omega_{max}$:
+
+\begin{equation}
+    e_{max} = K_e \cdot \omega_{max},
+    \quad \omega_{max} = \frac{e_{max}}{K_e} = \frac{15}{0.0502} = 298.8047809 \ rad/s
+\end{equation}
+
+\quad 1.7. Determinando a corrente máxima $I_{max}$ e máximo de torque gerado $T_{max}$:
+
+\section{Identificação Experimental}
+
+\quad 2.1. Determinando experimentalmente no kit QET da Quanser, de forma estatística,
+as constantes utilizadas como parâmetros na modelagem teórica:
+
+\quad (a) Aplicando voltagem constante $V_a$ e medindo a corrente $I_a$,
+levando em consideração que é mantido o eixo do motor parado
+e que o indutor de armadura se torna um curto-cicuito no momento da medição.
+Foi utilizado os dados obtidos experimentalmente para realizar uma Regressão Linear em Python com Scikit-Learn
+para obter o valor estimado da Resistência de armadura $R_a$:
+
+\begin{verbatim}
+    import numpy as np
+    from sklearn.linear_model import LinearRegression
+    # Dados de voltagem Va(V) em Volts e corrente Ia(A) que foram enviados em forma de tabela
+    voltagem = np.array([1.0, 2.0, 3.0, 4.0, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9])
+    corrente = np.array([0.076, 0.150, 0.225, 0.305, 0.425, 0.474, 0.550, 0.620, 0.720, 0.800])
+    # Ajuste da regressão linear
+    x = corrente.reshape(-1, 1)  # Converte corrente para formato adequado
+    y = voltagem
+    regressor = LinearRegression()
+    regressor.fit(x, y)
+    # Estimativa da resistência média (coeficiente angular da regressão linear)
+    resistencia_media = regressor.coef_[0]
+    # Exibindo os resultados
+    print("Resistência média:", resistencia_media, "ohms")
+\end{verbatim}
+
+Valor estimado da Resistência de armadura $R_a$: 12.222223261373172 $\Omega$
 
 \end{document}
