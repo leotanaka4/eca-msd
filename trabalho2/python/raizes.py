@@ -19,9 +19,9 @@ Km = 0.0502
 Ke = 0.0502
 
 # Exemplo de uso
-a = 1  # Coeficiente do termo de grau 2
-b = Ra/La  # Coeficiente do termo de grau 1
-c = Ke*Km/Jeq/La  # Coeficiente do termo independente
+a = La*Jeq/Km/Ke  # Coeficiente do termo de grau 2
+b = Ra*Jeq/Km/Ke # Coeficiente do termo de grau 1
+c = 1  # Coeficiente do termo independente
 
 raiz1, raiz2 = calcular_raizes(a, b, c)
 
@@ -29,5 +29,9 @@ raiz1, raiz2 = calcular_raizes(a, b, c)
 print("Raiz 1:", raiz1)
 print("Raiz 2:", raiz2)
 
+print("K:", 1/Ke)
+
 print("Tau 1:", -1/raiz1)
 print("Tau 2:", -1/raiz2)
+print(1/0.0504867653828448)
+print(Jeq*12.222223261373172/(0.0504867653828448**2))
