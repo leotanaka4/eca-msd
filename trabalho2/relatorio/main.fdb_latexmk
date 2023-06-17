@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1686965167 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" "main.pdf" "main" 1686965169
+["pdflatex"] 1686970165 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" "main.pdf" "main" 1686970167
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1686877327 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -147,10 +147,10 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" 1686965166 9013 20bcbfbbf4982a8ddac5f679ba36a196 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" 1686970165 10440 78a722b13fdcbb64bca5a9bfbb74004e ""
   "images//circuito.png" 1686873779 43176 6a26ad8e591fda2760544cf2da6e5169 ""
-  "main.aux" 1686965168 468 0b3f27d2bf3d53f5834f9de219d26443 "pdflatex"
-  "main.tex" 1686965166 9013 20bcbfbbf4982a8ddac5f679ba36a196 ""
+  "main.aux" 1686970167 468 a71e168586df00b92174aa0eeeaa4bc4 "pdflatex"
+  "main.tex" 1686970165 10440 78a722b13fdcbb64bca5a9bfbb74004e ""
   (generated)
   "main.aux"
   "main.log"

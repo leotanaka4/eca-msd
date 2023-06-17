@@ -226,8 +226,34 @@ estão perfeitamente fixadas juntas. Podemos usar a seguinte fórmula e valores:
 
 \begin{equation}
     J_{eq} = J_m + J_d = (1.16 \ 10^{-6} + 20.91136 \ 10^{-6}) \ kgm^2
-    = 22.07136 \ kgm^2
+    = 22.07136 \ 10^{-6} \ kgm^2
 \end{equation}
+
+\quad 1.5. Considerando que a função de transferência G(s) tenha a seguinte estrutura:
+
+\begin{equation}
+    G(s) = \frac{K}{(\tau_e s + 1)(\tau_m s + 1)}
+\end{equation}
+
+\quad Utilizando a equação (2) e as características dadas pelo fabricante para calcular
+os pólos da função de transferência:
+
+\begin{equation}
+\begin{aligned}
+    p_{1,2} = \frac{-\frac{R_a}{L_a} \pm \sqrt{\frac{R_a^2}{L_a^2} - 4\frac{K_e \cdot K_m}{J_{eq} \cdot L_a}}}{2}
+    = \frac{-\frac{10.6}{0.82 \cdot 10^{-3}} \pm \sqrt{\frac{10.6^2}{(0.82 \cdot 10^{-3})^2} - 4\frac{0.0502 \cdot 0.0502}{22.07136 \ 10^{-6} \cdot 0.82 \cdot 10^{-3}}}}{2}
+    = \frac{-12926.82927 \pm 12905.26847}{2} \\
+    p_1 = -12916.04887, \quad p_2 = -10.7804 \\
+    K = \frac{k_m}{J_{eq} \cdot L_a \cdot p_1 \cdot p_2} = 19.92031563, \quad \tau_e = -\frac{1}{p_1} = 7.742305794 \ 10^{-5}, \quad \tau_m = -\frac{1}{p_2} = 0.09276093651
+\end{aligned}
+\end{equation}
+
+\quad A constante de tempo elétrica $\tau_e$ pode ser considerada despressível
+comparada com a constante de tempo mecânica $\tau_m$,
+porque a constante de tempo elétrica é pequena em relação aos tempos de interesse,
+isso significa que o sistema tem uma dinâmica inicial rápida devido ao polo rápido,
+mas em seguida, a resposta se estabiliza gradualmente devido ao polo lento.
+O efeito do polo lento será mais predominante à medida que o tempo avança.
 
 \quad 1.6. Levando em consideração que não existe perturbação nem atrito,
 é possível determinar a velocidade máxima do motor $\omega_{max}$:
