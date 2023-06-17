@@ -182,6 +182,7 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
     = \frac{\frac{K_m}{R_a \cdot J_{eq}}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}{1 + \frac{K_e \cdot K_m}{R_a \cdot J_{eq}}\frac{1}{s (\frac{L_a}{R_a}s + 1)}}
     = \frac{k_m}{R_a \cdot J_{eq} \cdot s \cdot (\frac{L_a}{R_a}s + 1) + K_e \cdot K_m}
     = \frac{\frac{k_m}{J_{eq} \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_{eq} \cdot L_a}}
+    = \frac{\frac{1}{K_e}}{}
 \end{equation}
 
 \quad 1.3. Representando o sistema no espaço de estados com a realização canónica controlável:
@@ -255,7 +256,7 @@ isso significa que o sistema tem uma dinâmica inicial rápida devido ao polo r�
 mas em seguida, a resposta se estabiliza gradualmente devido ao polo lento.
 O efeito do polo lento será mais predominante à medida que o tempo avança.
 
-\quad 1.6. Levando em consideração que não existe perturbação nem atrito,
+\quad 1.6. Considerando que não existe perturbação nem atrito,
 é possível determinar a velocidade máxima do motor $\omega_{max}$:
 
 \begin{equation}
@@ -263,7 +264,11 @@ O efeito do polo lento será mais predominante à medida que o tempo avança.
     \quad \omega_{max} = \frac{e_{max}}{K_e} = \frac{15}{0.0502} = 298.8047809 \ rad/s
 \end{equation}
 
-\quad 1.7. Determinando a corrente máxima $I_{max}$ e máximo de torque gerado $T_{max}$:
+\quad 1.7. Determinando a corrente máxima $I_{max}$ utilizando Lei de Ohm e máximo de torque gerado $T_{max}$ utilizando Lei do Gerador:
+
+\begin{equation}
+    I_{max} = \frac{e_{max}}{R_a} = \frac{15}{10.6} = 1.4150943396 \ A, \quad T_{max} = K_m I_{max} = 0.0502 \cdot 1.4150943396 = 0.0710377358 \ Nm
+\end{equation}
 
 \section{Identificação Experimental}
 
@@ -297,7 +302,41 @@ Valor estimado da Resistência de armadura $R_a$: 12.222223261373172 $\Omega$
 
 \quad (b) Aplicando voltagem constante $V_a$ e medindo corrente e velocidade.
 Considerando que a resistência de armadura é conhecida. Foi utilizado os dados obtidos
-experimentalmente
+experimentalmente para realizar uma Regressão Linear em Python com Scikit-Learn
+para obter o valor estimado da Constante de torque do motor $K_m$:
+
+\begin{verbatim}
+    import numpy as np
+    from sklearn.linear_model import LinearRegression
+    # Ra resistência de armadura
+    Ra = 10.6
+    Jeq = Jeq = 22.07136 * 10**(-6)
+    # Dados de voltagem Va(V) em Volts, velocidade angular wm(rad/s) e corrente Ia(mA)
+    Va = np.array([1.0, 2.0, 3.0, 4.0, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9])
+    wm = np.array([12, 29, 49, 70, 89, 105, 127, 148, 168, 185])
+    Ia = np.array([1, 1, 1, 1, 1, 1, 2, 2, 2, 3])
+    # Ajuste da regressão linear
+    x = wm.reshape(-1, 1)  # Converte corrente para formato adequado
+    y = Va - Ra * Ia * 10**(-3)
+    regressor = LinearRegression()
+    regressor.fit(x, y)
+    # Estimativa da resistência média (coeficiente angular da regressão linear)
+    constante_torque = regressor.coef_[0]
+    # Exibindo os resultados
+    print("Constante de torque do motor:", constante_torque, "Nm/A")
+\end{verbatim}
+
+\quad Valor estimado do Constante de Torque do motor $K_m$: 0.05048676538284488 Nm/A
+
+\quad 2.2. Calculando a função de transferência do sistema G(s) com os parâmetros $\{ R_a, K_m \}$
+estimados acima. Determinando os parâmetros $\{K,\tau_e, \tau_m\}$:
+
+\begin{equation}
+\begin{aligned}
+    G(s) = \frac{\frac{k_m}{J_{eq} \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_{eq} \cdot L_a}} = \frac{2789552.89}{s^2 + 14905.15032 \ s + 140835.5023} = \\
+    K = 4.951792773, \quad \tau_e = 3.356674407 \ 10^{-5}, \quad \tau_m = 0.05288331173 
+\end{aligned}
+\end{equation}
 
 \section{Validação dos modelos}
 
