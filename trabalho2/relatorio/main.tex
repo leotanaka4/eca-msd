@@ -275,17 +275,23 @@ mas em seguida, a resposta se estabiliza gradualmente devido ao polo lento.
 O efeito do polo lento será mais predominante à medida que o tempo avança.
 
 \quad 1.6. Considerando que não existe perturbação nem atrito,
-é possível determinar a velocidade máxima do motor $\omega_{max}$:
+é possível determinar a velocidade máxima do motor $\omega_{max}$
+pelo Teorema do Valor Final:
 
 \begin{equation}
     V_{max} = K_e \cdot \omega_{max},
-    \quad \omega_{max} = \lim_{x \rightarrow \infty}s \cdot \Omega_m(s) = s\frac{V_{max}}{s \cdot K_e} = \frac{15}{0.0502} = 298.8047809 \ rad/s
+    \quad \omega_{max} = \lim_{s \rightarrow 0}s \cdot \Omega_m(s) = \lim_{s \rightarrow 0} s\frac{V_{max}}{s \cdot K_e} = \frac{15}{0.0502} = 298.8047809 \ rad/s
 \end{equation}
 
-\quad 1.7. Determinando a corrente máxima $I_{max}$ utilizando Lei de Ohm e máximo de torque gerado $T_{max}$ utilizando Lei do Gerador:
+\quad 1.7. Determinando a corrente máxima $I_{max}$ e máximo de torque gerado $T_{max}$ utilizando as equações (1) e Teorema do Valor Final:
 
 \begin{equation}
-    I_{max} = \frac{e_{max}}{R_a} = \frac{15}{10.6} = 1.4150943396 \ A, \quad T_{max} = K_m I_{max} = 0.0502 \cdot 1.4150943396 = 0.0710377358 \ Nm
+\begin{aligned}
+    I_{max} = \lim_{s \rightarrow 0}s \cdot I_a(s)
+    = \lim_{s \rightarrow 0} s\frac{\frac{V_{max}}{R_a \cdot s}}{\frac{L_a}{R_a}s+1}-s\frac{K_e \Omega_m(s)}{\frac{L_a}{R_a}s+1}
+    = \frac{V_{max}}{R_a} = \frac{15}{10.6} = 1.4150943396 \ A, \\
+    T_{max} = K_m I_{max} = 0.0502 \cdot 1.4150943396 = 0.0710377358 \ Nm
+\end{aligned}
 \end{equation}
 
 \section{Identificação Experimental}
