@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1687220127 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" "main.pdf" "main" 1687220128
+["pdflatex"] 1687283131 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" "main.pdf" "main" 1687283133
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1686877327 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -149,13 +149,11 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" 1687220126 23810 1c7d8e27acb3818c918caafa504f201e ""
-  "images//circuito.png" 1686873779 43176 6a26ad8e591fda2760544cf2da6e5169 ""
-  "images//resposta2.png" 1687216973 62518 485cd9248a296b36b47ee577b7d828b7 ""
-  "images//resposta4.png" 1687216990 60693 a00ec01c95034e321ab49cf79b116f21 ""
-  "main.aux" 1687220128 1323 5389157689341a34a17538d2ce6685e4 "pdflatex"
-  "main.tex" 1687220126 23810 1c7d8e27acb3818c918caafa504f201e ""
-  "respostasin5.png" 1687217024 78846 cad5bb078d3ac35c6f2f3db2b1d67d59 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho2/relatorio/main.tex" 1687283130 22731 9d52982fc7d7fac946b0aac11cc7e52c ""
+  "images//circuito.png" 1687280963 43176 6a26ad8e591fda2760544cf2da6e5169 ""
+  "images//respostas.png" 1687281014 249342 c55d48e690ebd2cbedf9c319ae23e0c4 ""
+  "main.aux" 1687283132 915 f84524f9a3e9f091c86cac9ddcbb9366 "pdflatex"
+  "main.tex" 1687283130 22731 9d52982fc7d7fac946b0aac11cc7e52c ""
   (generated)
   "main.aux"
   "main.log"

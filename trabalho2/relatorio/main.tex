@@ -373,8 +373,9 @@ estimados acima. Determinando os parâmetros $\{K,\tau_e, \tau_m\}$:
 
 \begin{equation}
 \begin{aligned}
-    G(s) = \frac{\frac{k_m}{J_{eq} \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_{eq} \cdot L_a}} = \frac{2789552.89}{s^2 + 14905.15032 \ s + 140835.5023} \\
-    K = 4.951792773, \quad \tau_e = 3.356674407 \ 10^{-5}, \quad \tau_m = 0.05288331173 
+    G(s) = \frac{\frac{k_m}{J_{eq} \cdot L_a}}{s^2 + \frac{R_a}{L_a}s + \frac{K_e \cdot K_m}{J_{eq} \cdot L_a}}
+    = \frac{\frac{1}{K_e}}{\frac{L_a \cdot J_{eq}}{K_m \cdot K_e}s^2 + \frac{R_a \cdot J_{eq}}{K_m \cdot K_e}s + 1} = \frac{19.8071710955718}{(6.713348814760633 \ 10^{-5} \ s + 1)(0.10576662346101155 \ s + 1)} \\
+    K = 19.8071710955718, \quad \tau_e = 6.713348814760633 \ 10^{-5}, \quad \tau_m = 0.10576662346101155
 \end{aligned}
 \end{equation}
 
@@ -446,7 +447,8 @@ do que era esperado como entrada, as entradas e os intervalos de tempo aproximad
 \end{verbatim}
 
 \quad Utilizando o espaço de estados dos cálculos (3) foi feita a simulação numérica do G(s).
-Além disso, foi utilizado a função de transferência simplificada que é $\hat{G}(s)$ dos cálculos (14):
+Além disso, foi obtido as respostas do sistema $G(s)$ as entradas ao degrau (2, 4 e 10 volts) e
+senoidal (5 volts):
 
 \begin{verbatim}
     # Definindo as matrizes A, B, C e D do sistema
@@ -455,133 +457,86 @@ Além disso, foi utilizado a função de transferência simplificada que é $\ha
     C = np.array([[Km/Jeq/La, 0]])
     D = np.array([[0]])
     sys = ctrl.StateSpace(A, B, C, D) # Criando um objeto StateSpace para representar seu sistema.
-    # Definir a funcao de transferencia do sistema hat
-    num = [19.80717109557183]  # numerador da funcao de transferencia 
-    den = [0.10583375694916465, 1]  # denominador da funcao de transferencia 
+    # Resposta do Sistema G(s).
+    t2, y2 = ctrl.forced_response(sys, T=t2, U=u2)
+    t4, y4 = ctrl.forced_response(sys, T=t4, U=u4)
+    t10, y10 = ctrl.forced_response(sys, T=t10, U=u10)
+    tsin5, ysin5 = ctrl.forced_response(sys, T=tsin5, U=usin5)
+\end{verbatim}
+
+\quad Utilizando o sistema $\hat{G}(s)$ foi feita a simulação numérica das respostas
+as entradas ao degrau (2, 4 e 10 volts) e senoidal (5 volts).
+Porém, foram feitos ajustes no $\hat{K}$ e $\hat{\tau}$ para que as respostas fossem similares as respostas experimentais (tempo de
+subida, tempo de assentamento, sobrepasso, etc). Portanto, foram escolhidos $\hat{K} = 18$ e o $\hat{\tau} = 0.12$.
+Então, o $\hat{K}$ escolhido foi o de menor valor, porque ele que representa melhor o máximo de atrito proporcional a velocidade angular $\omega_m$.
+Além disso, o $\hat{\tau}$ escolhido foi de maior valor, porque ele que representa melhor o máximo de atraso da resposta em relação a entrada u.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{respostas.png}
+    \caption{Respostas as entradas u}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
+\begin{verbatim}
+    # Definir a funcao de transferencia do sistema G_Hat(s)
+    num = [18]  # o K foi escolhido pegando o menor dos que se ajustaram as quatro respostas
+    den = [0.12, 1]  # o tau foi escolhido pegando o maior dos que se ajustaram as quatro respostas
     sys_hat = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
-\end{verbatim}
-
-\quad 3.1(a) Resposta ao degrau (2 Volts):
-
-\begin{verbatim}
-    # Definir a funcao de transferencia do sistema hat
-    num2 = [18]  # numerador da funcao de transferencia
-    den2 = [0.09, 1]  # denominador da funcao de transferencia
-    sys_hat_2 = ctrl.TransferFunction(num2, den2)  # criar o objeto que representa o sistema
-    t2, y2 = ctrl.forced_response(sys, T=t2, U=u2) # Gere a resposta ao sinal de entrada.
-    t_hat_2, y_hat_2 = ctrl.forced_response(sys_hat_2,T=t2,U=u2
-        ,X0=y2v[0]/sys_hat_2.num[0][0][0]*sys_hat_2.den[0][0][0])
-    plt.figure(figsize=(25, 8))
-    plt.plot(t2v, y2v)
-    plt.plot(t2, y2)
-    plt.plot(t_hat_2, y_hat_2)
-    plt.xlabel('tempo (s)')
-    plt.ylabel('velocidade angular (rad/s)')
-    plt.title('Resposta a onda quadrada  +/- 2Volts')
-    plt.grid(True)
+    # Criar a figura e os quatro subplots com tamanho ajustável
+    fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(25, 16))
+    # Plotar o gráfico no subplot 1
+    ax1.plot(t2v, y2v)
+    ax1.plot(t2, y2)
+    t_hat_2, y_hat_2 = ctrl.forced_response(sys_hat,T=t2,U=u2)
+    ax1.plot(t_hat_2, y_hat_2)
+    ax1.set_title('Resposta a onda quadrada  +/- 2Volts')
+    ax1.set_xlabel('tempo (s)')
+    ax1.set_ylabel('velocidade angular (rad/s)')
+    ax1.grid(True)
+    # Plotar o gráfico no subplot 2
+    ax2.plot(t4v, y4v)
+    ax2.plot(t4, y4)
+    t_hat_4, y_hat_4 = ctrl.forced_response(sys_hat,T=t4,U=u4)
+    ax2.plot(t_hat_4, y_hat_4)
+    ax2.set_title('Resposta a onda quadrada  +/- 4Volts')
+    ax2.set_xlabel('tempo (s)')
+    ax2.set_ylabel('velocidade angular (rad/s)')
+    ax2.grid(True)
+    # Plotar o gráfico no subplot 3
+    ax3.plot(t10v, y10v)
+    ax3.plot(t10, y10)
+    t_hat_10, y_hat_10 = ctrl.forced_response(sys_hat,T=t10,U=u10)
+    ax3.plot(t_hat_10, y_hat_10)
+    ax3.set_title('Resposta a onda quadrada  +/- 10Volts')
+    ax3.set_xlabel('tempo (s)')
+    ax3.set_ylabel('velocidade angular (rad/s)')
+    ax3.grid(True)
+    # Plotar o gráfico no subplot 4
+    ax4.plot(tsin5v, ysin5v)
+    ax4.plot(tsin5, ysin5)
+    t_hat_sin5, y_hat_sin5 = ctrl.forced_response(sys_hat,T=tsin5,U=usin5)
+    ax4.plot(t_hat_sin5, y_hat_sin5)
+    ax4.set_title('Resposta a senoide  +/- 5Volts')
+    ax4.set_xlabel('tempo (s)')
+    ax4.set_ylabel('velocidade angular (rad/s)')
+    ax4.grid(True)
+    # Ajustar o espaçamento entre os subplots
+    plt.tight_layout()
+    # Exibir o gráfico
     plt.show()
 \end{verbatim}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.32]{resposta2.png}
-    \caption{Resposta ao degrau (2 Volts)}
-\end{figure}
-
-\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
-
-\quad 3.2(b) Resposta ao degrau (4 Volts):
-
-\begin{verbatim}
-    # Definir a funcao de transferencia do sistema hat
-    num4 = [18.7]  # numerador da funcao de transferencia
-    den4 = [0.09, 1]  # denominador da funcao de transferencia
-    sys_hat_4 = ctrl.TransferFunction(num4, den4)  # criar o objeto que representa o sistema
-    t4, y4 = ctrl.forced_response(sys, T=t4, U=u4) # Gere a resposta ao sinal de entrada.
-    t_hat_4, y_hat_4 = ctrl.forced_response(sys_hat_4,T=t4, U=u4
-        ,X0=y4v[0]/sys_hat_4.num[0][0][0]*sys_hat_4.den[0][0][0])
-    plt.figure(figsize=(25, 8))
-    plt.plot(t4v, y4v)
-    plt.plot(t4, y4)
-    plt.plot(t_hat_4, y_hat_4)
-    plt.xlabel('tempo (s)')
-    plt.ylabel('velocidade angular (rad/s)')
-    plt.title('Resposta a onda quadrada +/- 4Volts')
-    plt.grid(True)
-    plt.show()
-\end{verbatim}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.32]{resposta4.png}
-    \caption{Resposta ao degrau (4 Volts)}
-\end{figure}
-
-\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
-
-\quad 3.1(c) Resposta ao degrau (10 Volts):
-
-\begin{verbatim}
-    # Definir a funcao de transferencia do sistema hat
-    num10 = [18.95] # numerador da funcao de transferencia
-    den10 = [0.091, 1] # denominador da funcao de transferencia
-    sys_hat_10 = ctrl.TransferFunction(num10, den10) # criar o objeto que representa o sistema
-    t10, y10 = ctrl.forced_response(sys, T=t10, U=u10) # Gere a resposta ao sinal de entrada.
-    t_hat_10, y_hat_10 = ctrl.forced_response(sys_hat_10,T=t10, U=u10
-        ,X0=y10v[0]/sys_hat_10.num[0][0][0]*sys_hat_10.den[0][0][0])
-    plt.figure(figsize=(25, 8))
-    plt.plot(t10v, y10v)
-    plt.plot(t10, y10)
-    plt.plot(t_hat_10, y_hat_10)
-    plt.xlabel('tempo (s)')
-    plt.ylabel('velocidade angular (rad/s)')
-    plt.title('Resposta a onda quadrada +/- 10Volts')
-    plt.grid(True)
-    plt.show()
-\end{verbatim}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.32]{resposta4.png}
-    \caption{Resposta ao degrau (4 Volts)}
-\end{figure}
-
-\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
-
-\quad 3.1(d) Resposta à onda senoidal (5 Volts):
-
-\begin{verbatim}
-    # Definir a funcao de transferencia do sistema hat
-    numsin5 = [18.8] # numerador da funcao de transferencia
-    densin5 = [0.12, 1] # denominador da funcao de transferencia
-    sys_hat_sin5 = ctrl.TransferFunction(numsin5, densin5) # criar o objeto que representa o sistema
-    tsin5, ysin5 = ctrl.forced_response(sys, T=tsin5, U=usin5) # Gere a resposta ao sinal de entrada.
-    t_hat_sin5, y_hat_sin5 = ctrl.forced_response(sys_hat_sin5 ,T=tsin5, U=usin5
-        ,X0=ysin5v[0]/sys_hat_sin5.num[0][0][0]*sys_hat_sin5.den[0][0][0])
-    plt.figure(figsize=(25, 8))
-    plt.plot(tsin5v, ysin5v)
-    plt.plot(tsin5, ysin5)
-    plt.plot(t_hat_sin5, y_hat_sin5)
-    plt.xlabel('tempo (s)')
-    plt.ylabel('velocidade angular (rad/s)')
-    plt.title('Resposta a onda senoidal +/- 5Volts')
-    plt.grid(True)
-    plt.show()
-\end{verbatim}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.32]{respostasin5.png}
-    \caption{Resposta à onda senoidal (4 Volts)}
-\end{figure}
-
-\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
 
 \section{Conclusão}
 
-\quad A discrepância entre os modelos de motor DC de armadura e os resultados experimentais ocorrem devido a simplificações inerentes aos modelos teóricos, parâmetros variáveis do motor na prática e efeitos não considerados.
-Além disso, condições de operação realistas, como variações de carga e perturbações ambientais, podem afetar o desempenho do motor.
-Limitações na medição também contribuem para a diferença entre os resultados teóricos e experimentais.
+\quad A discrepância entre os modelos de motor DC de armadura e os resultados experimentais ocorre devido a simplificações inerentes aos modelos teóricos, parâmetros variáveis do motor na prática e efeitos não considerados.
+Além disso, condições de operação realistas, como variações de carga e perturbações ambientais,
+afetam o desempenho do motor de maneira não capturada pelos modelos teóricos.
+Limitações na medição, como erros, ruído e atrasos de resposta,
+também contribuem para a diferença entre os resultados teóricos e experimentais.
+É importante reconhecer essas limitações e buscar abordagens mais abrangentes para modelar e analisar o comportamento do motor DC de armadura,
+levando em consideração a complexidade do mundo real.
 
 \begin{thebibliography}{99}
     \bibitem{pythoncontrol} Documentação do Python Control. Disponível em: \url{https://python-control.readthedocs.io/en/0.9.3.post2/}. Acesso em: 17 de junho de 2023.

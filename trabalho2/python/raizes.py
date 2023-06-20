@@ -12,11 +12,11 @@ def calcular_raizes(a, b, c):
     return raiz1, raiz2
 
 # Definindo as constantes do sistema
-Ra = 10.6
+Ra = 12.222223261373172
 La = 0.82 * 10**(-3)
 Jeq = 22.07136 * 10**(-6)
-Km = 0.0502
-Ke = 0.0502
+Km = 0.05048676538284488
+Ke = 0.05048676538284488
 
 # Exemplo de uso
 a = La*Jeq/Km/Ke  # Coeficiente do termo de grau 2
@@ -33,5 +33,3 @@ print("K:", 1/Ke)
 
 print("Tau 1:", -1/raiz1)
 print("Tau 2:", -1/raiz2)
-print(1/0.0504867653828448)
-print(Jeq*12.222223261373172/(0.0504867653828448**2))
