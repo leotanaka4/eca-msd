@@ -88,7 +88,7 @@ representado pelo circuito abaixo:
 
 \quad Organizando as equações do sistema para obter o diagrama de blocos e a função de transferência.
 Utilizando a Lei de Kirchhoff das Tensões, Equação do Torque, Lei do Motor e Lei do Gerador. Depois,
-realizando a Transformada de Laplace das equações:
+realizando a Transformada de Laplace:
 
 \begin{equation}
 \begin{aligned}
@@ -174,8 +174,7 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
 \end{tikzpicture}
 \end{center}
 
-\quad 1.2. Calculando a função de transferência do motor $G(s)$ de $V_a(s)$ para $\Omega_m(s)$
-(Levando em consideração que é um sistema realimentado):
+\quad 1.2. Calculando a função de transferência do motor $G(s)$ de $V_a(s)$ para $\Omega_m(s)$:
 
 \begin{equation}
     G(s) = \frac{\Omega_m(s)}{V_a(s)}
@@ -189,8 +188,7 @@ O bloco azul é o subsistema elétrico, o bloco laranja é o subsistema mecânic
 
 \begin{equation}
 \begin{aligned}
-    G(s) = \frac{b_1 s + b_2}{s^2 + a_1 s + a_2}
-    \\
+    G(s) = \frac{b_1 s + b_2}{s^2 + a_1 s + a_2}, \quad
     \dot{x} =
     \begin{bmatrix}
         0 && 1 \\
@@ -302,12 +300,13 @@ as constantes utilizadas como parâmetros na modelagem teórica:
 \quad (a) Aplicando voltagem constante $V_a$ e medindo a corrente $I_a$,
 levando em consideração que é mantido o eixo do motor parado
 e que o indutor de armadura se torna um curto-cicuito no momento da medição.
-Foi utilizado os dados obtidos experimentalmente para realizar uma Regressão Linear em Python com Scikit-Learn
-para obter o valor estimado da Resistência de armadura $R_a$:
 
 \begin{equation}
     R_a \cdot i_a + L_a \frac{di_a}{dt} = V_a - e_c \rightarrow R_a \cdot i_a + 0 = V_a - 0 \rightarrow R_a = \frac{V_a}{i_a}
 \end{equation}
+
+\quad Foi utilizado os dados obtidos experimentalmente para realizar uma Regressão Linear em Python com Scikit-Learn
+para obter o valor estimado da Resistência de armadura $R_a$:
 
 \begin{verbatim}
     import numpy as np
@@ -320,24 +319,39 @@ para obter o valor estimado da Resistência de armadura $R_a$:
     y = voltagem
     regressor = LinearRegression()
     regressor.fit(x, y)
-    # Estimativa da resistência média (coeficiente angular da regressão linear)
-    resistencia_media = regressor.coef_[0]
-    # Exibindo os resultados
-    print("Resistência média:", resistencia_media, "ohms")
+    resistencia_media = regressor.coef_[0] # coeficiente angular da regressão linear
+    print("Resistência média:", resistencia_media, "ohms") # Exibindo os resultados
 \end{verbatim}
 
 Valor estimado da Resistência de armadura $R_a$: 12.222223261373172 $\Omega$
 
 \quad (b) Aplicando voltagem constante $V_a$ e medindo corrente e velocidade.
-Considerando que a resistência de armadura é conhecida. Foi utilizado os dados obtidos
+Considerando que a resistência de armadura é conhecida. Foi calculado a potência
+mecânica e a potência elétrica do motor DC para achar a relação entre as constantes
+do motor.
+
+\begin{equation}
+\begin{aligned}
+    P_m = T_m \cdot \omega_m, P_e = e_c \cdot i_a, P_m = P_e \rightarrow T_m \cdot \omega_m = e_c \cdot i_a, \\
+    K_m \cdot i_a \cdot \omega_m = K_e \cdot i_a \cdot \omega_m \rightarrow K_m = K_e
+\end{aligned}
+\end{equation}
+
+\quad Utilizando o resultado dos cálculos acima é possível obter o valor da constante mecânica do motor ao afirmar
+que o circuito está em curto-circuito nos dados experimentais calculados:
+
+\begin{equation}
+    e_c = V_a - R_a \cdot i_a \rightarrow K_m = \frac{V_a - R_a \cdot i_a}{\omega_m}
+\end{equation}
+
+\quad Foi utilizado os dados obtidos
 experimentalmente para realizar uma Regressão Linear em Python com Scikit-Learn
 para obter o valor estimado da Constante de torque do motor $K_m$:
 
 \begin{verbatim}
     import numpy as np
     from sklearn.linear_model import LinearRegression
-    # Ra resistência de armadura
-    Ra = 10.6
+    Ra = 10.6 # Ra resistência de armadura
     Jeq = Jeq = 22.07136 * 10**(-6)
     # Dados de voltagem Va(V) em Volts, velocidade angular wm(rad/s) e corrente Ia(mA)
     Va = np.array([1.0, 2.0, 3.0, 4.0, 4.9, 5.9, 6.9, 7.9, 8.9, 9.9])
@@ -348,10 +362,8 @@ para obter o valor estimado da Constante de torque do motor $K_m$:
     y = Va - Ra * Ia * 10**(-3)
     regressor = LinearRegression()
     regressor.fit(x, y)
-    # Estimativa da resistência média (coeficiente angular da regressão linear)
-    constante_torque = regressor.coef_[0]
-    # Exibindo os resultados
-    print("Constante de torque do motor:", constante_torque, "Nm/A")
+    constante_torque = regressor.coef_[0] # coeficiente angular da regressão linear
+    print("Constante de torque do motor:", constante_torque, "Nm/A") # Exibindo os resultados
 \end{verbatim}
 
 \quad Valor estimado do Constante de Torque do motor $K_m$: 0.05048676538284488 Nm/A
@@ -381,7 +393,206 @@ estimados acima. Determinando os parâmetros $\{K,\tau_e, \tau_m\}$:
 
 \section{Validação dos modelos}
 
-\quad Foram obtidas experimentalmente as respostas (rad/s) ao degrau (2, 4 e 10 volts) e
-senoidal (5 volts).
+\begin{verbatim}
+    # Bibliotecas utilizadas durante essa parte do relatório
+    import os
+    from scipy.io import loadmat
+    import numpy as np
+    import control as ctrl
+    import matplotlib.pyplot as plt
+    # Coletando os dados experimentais de formato .mat
+    data = loadmat("data/trabalho2dados.mat")
+    # Resposta a onda quadrada +/- 2Volts
+    t2v = np.array(data["t2v"]) # t2v:  tempo (s)
+    u2v = np.array(data["u2v"]) # u2v:  entrada Va (v)
+    y2v = np.array(data["y2v"]) # y2v:  saida  wm  (rad/s)
+    # Resposta a onda quadrada +/- 4Volts
+    t4v = np.array(data["t4v"]) # t4v:  tempo (s)
+    u4v = np.array(data["u4v"]) # u4v:  entrada Va (v)
+    y4v = np.array(data["y4v"]) # y4v:  saida  wm  (rad/s)
+    # Resposta a onda quadrada +/- 10Volts
+    t10v = np.array(data["t10v"]) # t10v:  tempo (s)
+    u10v = np.array(data["u10v"]) # u10v:  entrada Va (v)
+    y10v = np.array(data["y10v"]) # y10v:  saida  wm  (rad/s)
+    # Resposta a Senoide de  5Volts 
+    tsin5v = np.array(data["tsin5v"]) # tsin5v:  tempo (s)
+    usin5v = np.array(data["usin5v"]) # usin5v:  entrada Va (v)
+    ysin5v = np.array(data["ysin5v"]) # ysin5v:  saida  wm  (rad/s)
+    # Definindo as constantes do sistema
+    Ra = 10.6
+    La = 0.82 * 10**(-3)
+    Jeq = 22.07136 * 10**(-6)
+    Km = 0.0502
+    Ke = 0.0502
+\end{verbatim}
+
+\quad Para obter as simulações numéricas das respostas do sistema não foi possível utilizar as entradas
+e os intervalos de tempo experimentais. Então, foi necessário obter por meio da visualização dos dados experimentais e
+do que era esperado como entrada, as entradas e os intervalos de tempo aproximados:
+
+\begin{verbatim}
+    # Resposta a onda quadrada +/- 2Volts
+    t2 = np.linspace(0, len(t2v)/100, len(t2v)) # t2:  tempo (s)
+    u2 = 1.98 * np.sign(np.sin(2 * np.pi * (1/2) * (t2-0.475))) # u2:  entrada Va (V)
+    # Resposta a onda quadrada +/- 4Volts
+    t4 = np.linspace(0, len(t4v)/100, len(t4v)) # t4:  tempo (s)
+    u4 = 3.96 * np.sign(np.sin(2 * np.pi * (1/2) * (t4-0.655))) # u4:  entrada Va (V)
+    # Resposta a onda quadrada +/- 10Volts
+    t10 = np.linspace(0, len(t10v)/100, len(t10v)) # t10:  tempo (s)
+    u10 = 4.95 * np.sign(np.sin(2 * np.pi * (1/2) * (t10-0.915))) + 4.95 # u10:  entrada Va (V)
+    # Resposta a Senoide de +/- 5Volts 
+    tsin5 = np.linspace(0, len(tsin5v)/100, len(tsin5v)) # tsin5:  tempo (s)
+    usin5 = 4.965666 * np.sin(tsin5*np.pi + 3*np.pi/2 - 0.15) # usin5:  entrada Va (V)
+\end{verbatim}
+
+\quad Utilizando o espaço de estados dos cálculos (3) foi feita a simulação numérica do G(s).
+Além disso, foi utilizado a função de transferência simplificada que é $\hat{G}(s)$ dos cálculos (14):
+
+\begin{verbatim}
+    # Definindo as matrizes A, B, C e D do sistema
+    A = np.array([[0, 1], [-Ke*Km/Jeq/La, -Ra/La]])
+    B = np.array([[0], [1]])
+    C = np.array([[Km/Jeq/La, 0]])
+    D = np.array([[0]])
+    sys = ctrl.StateSpace(A, B, C, D) # Criando um objeto StateSpace para representar seu sistema.
+    # Definir a funcao de transferencia do sistema hat
+    num = [19.80717109557183]  # numerador da funcao de transferencia 
+    den = [0.10583375694916465, 1]  # denominador da funcao de transferencia 
+    sys_hat = ctrl.TransferFunction(num, den)  # criar o objeto que representa o sistema
+\end{verbatim}
+
+\quad 3.1(a) Resposta ao degrau (2 Volts):
+
+\begin{verbatim}
+    # Definir a funcao de transferencia do sistema hat
+    num2 = [18]  # numerador da funcao de transferencia
+    den2 = [0.09, 1]  # denominador da funcao de transferencia
+    sys_hat_2 = ctrl.TransferFunction(num2, den2)  # criar o objeto que representa o sistema
+    t2, y2 = ctrl.forced_response(sys, T=t2, U=u2) # Gere a resposta ao sinal de entrada.
+    t_hat_2, y_hat_2 = ctrl.forced_response(sys_hat_2,T=t2,U=u2
+        ,X0=y2v[0]/sys_hat_2.num[0][0][0]*sys_hat_2.den[0][0][0])
+    plt.figure(figsize=(25, 8))
+    plt.plot(t2v, y2v)
+    plt.plot(t2, y2)
+    plt.plot(t_hat_2, y_hat_2)
+    plt.xlabel('tempo (s)')
+    plt.ylabel('velocidade angular (rad/s)')
+    plt.title('Resposta a onda quadrada  +/- 2Volts')
+    plt.grid(True)
+    plt.show()
+\end{verbatim}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.32]{resposta2.png}
+    \caption{Resposta ao degrau (2 Volts)}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
+\quad 3.2(b) Resposta ao degrau (4 Volts):
+
+\begin{verbatim}
+    # Definir a funcao de transferencia do sistema hat
+    num4 = [18.7]  # numerador da funcao de transferencia
+    den4 = [0.09, 1]  # denominador da funcao de transferencia
+    sys_hat_4 = ctrl.TransferFunction(num4, den4)  # criar o objeto que representa o sistema
+    t4, y4 = ctrl.forced_response(sys, T=t4, U=u4) # Gere a resposta ao sinal de entrada.
+    t_hat_4, y_hat_4 = ctrl.forced_response(sys_hat_4,T=t4, U=u4
+        ,X0=y4v[0]/sys_hat_4.num[0][0][0]*sys_hat_4.den[0][0][0])
+    plt.figure(figsize=(25, 8))
+    plt.plot(t4v, y4v)
+    plt.plot(t4, y4)
+    plt.plot(t_hat_4, y_hat_4)
+    plt.xlabel('tempo (s)')
+    plt.ylabel('velocidade angular (rad/s)')
+    plt.title('Resposta a onda quadrada +/- 4Volts')
+    plt.grid(True)
+    plt.show()
+\end{verbatim}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.32]{resposta4.png}
+    \caption{Resposta ao degrau (4 Volts)}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
+\quad 3.1(c) Resposta ao degrau (10 Volts):
+
+\begin{verbatim}
+    # Definir a funcao de transferencia do sistema hat
+    num10 = [18.95] # numerador da funcao de transferencia
+    den10 = [0.091, 1] # denominador da funcao de transferencia
+    sys_hat_10 = ctrl.TransferFunction(num10, den10) # criar o objeto que representa o sistema
+    t10, y10 = ctrl.forced_response(sys, T=t10, U=u10) # Gere a resposta ao sinal de entrada.
+    t_hat_10, y_hat_10 = ctrl.forced_response(sys_hat_10,T=t10, U=u10
+        ,X0=y10v[0]/sys_hat_10.num[0][0][0]*sys_hat_10.den[0][0][0])
+    plt.figure(figsize=(25, 8))
+    plt.plot(t10v, y10v)
+    plt.plot(t10, y10)
+    plt.plot(t_hat_10, y_hat_10)
+    plt.xlabel('tempo (s)')
+    plt.ylabel('velocidade angular (rad/s)')
+    plt.title('Resposta a onda quadrada +/- 10Volts')
+    plt.grid(True)
+    plt.show()
+\end{verbatim}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.32]{resposta4.png}
+    \caption{Resposta ao degrau (4 Volts)}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
+\quad 3.1(d) Resposta à onda senoidal (5 Volts):
+
+\begin{verbatim}
+    # Definir a funcao de transferencia do sistema hat
+    numsin5 = [18.8] # numerador da funcao de transferencia
+    densin5 = [0.12, 1] # denominador da funcao de transferencia
+    sys_hat_sin5 = ctrl.TransferFunction(numsin5, densin5) # criar o objeto que representa o sistema
+    tsin5, ysin5 = ctrl.forced_response(sys, T=tsin5, U=usin5) # Gere a resposta ao sinal de entrada.
+    t_hat_sin5, y_hat_sin5 = ctrl.forced_response(sys_hat_sin5 ,T=tsin5, U=usin5
+        ,X0=ysin5v[0]/sys_hat_sin5.num[0][0][0]*sys_hat_sin5.den[0][0][0])
+    plt.figure(figsize=(25, 8))
+    plt.plot(tsin5v, ysin5v)
+    plt.plot(tsin5, ysin5)
+    plt.plot(t_hat_sin5, y_hat_sin5)
+    plt.xlabel('tempo (s)')
+    plt.ylabel('velocidade angular (rad/s)')
+    plt.title('Resposta a onda senoidal +/- 5Volts')
+    plt.grid(True)
+    plt.show()
+\end{verbatim}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.32]{respostasin5.png}
+    \caption{Resposta à onda senoidal (4 Volts)}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
+\section{Conclusão}
+
+\quad A discrepância entre os modelos de motor DC de armadura e os resultados experimentais ocorrem devido a simplificações inerentes aos modelos teóricos, parâmetros variáveis do motor na prática e efeitos não considerados.
+Além disso, condições de operação realistas, como variações de carga e perturbações ambientais, podem afetar o desempenho do motor.
+Limitações na medição também contribuem para a diferença entre os resultados teóricos e experimentais.
+
+\begin{thebibliography}{99}
+    \bibitem{pythoncontrol} Documentação do Python Control. Disponível em: \url{https://python-control.readthedocs.io/en/0.9.3.post2/}. Acesso em: 17 de junho de 2023.
+    
+    \bibitem{scipy-docs} Documentação do SciPy. Disponível em: \url{https://docs.scipy.org/doc/scipy/}. Acesso em: 17 de junho de 2023.
+
+    \bibitem{numpy} Documentação do NumPy. Disponível em: \url{https://numpy.org/doc/stable/}. Acesso em: 17 de junho de 2023.
+    
+    \bibitem{matplotlib} Documentação do Matplotlib. Disponível em: \url{https://matplotlib.org/stable/api/index}. Acesso em: 17 de junho de 2023.
+
+    \bibitem{dorf} DORF, R. C.; BISHOP, R. H. \textit{Modern Control Systems}. 11th edition. [S.l.]: PEARSON PRENTICE HALL, 2008.
+\end{thebibliography}
 
 \end{document}
