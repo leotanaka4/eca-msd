@@ -368,6 +368,12 @@ para obter o valor estimado da Constante de torque do motor $K_m$:
 
 \quad Valor estimado do Constante de Torque do motor $K_m$: 0.05048676538284488 Nm/A
 
+\quad A inércia da carga não influencia diretamente a constante Km de um motor DC.
+A constante Km é uma característica inerente ao motor, que relaciona o torque gerado pelo motor com a corrente de armadura aplicada.
+Ela é determinada pelas características e geometria do motor.
+A carga com maior inércia exigirá um torque maior para alterar a velocidade angular do motor, o que pode afetar a eficiência do sistema.
+No entanto, a inércia da carga não tem um efeito direto na constante Km, que permanece como uma propriedade intrínseca do motor.
+
 \quad 2.2. Calculando a função de transferência do sistema G(s) com os parâmetros $\{ R_a, K_m \}$
 estimados acima. Determinando os parâmetros $\{K,\tau_e, \tau_m\}$:
 
@@ -471,14 +477,6 @@ subida, tempo de assentamento, sobrepasso, etc). Portanto, foram escolhidos $\ha
 Então, o $\hat{K}$ escolhido foi o de menor valor, porque ele que representa melhor o máximo de atrito proporcional a velocidade angular $\omega_m$.
 Além disso, o $\hat{\tau}$ escolhido foi de maior valor, porque ele que representa melhor o máximo de atraso da resposta em relação a entrada u.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.3]{respostas.png}
-    \caption{Respostas as entradas u}
-\end{figure}
-
-\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
-
 \begin{verbatim}
     # Definir a funcao de transferencia do sistema G_Hat(s)
     num = [18]  # o K foi escolhido pegando o menor dos que se ajustaram as quatro respostas
@@ -528,9 +526,22 @@ Além disso, o $\hat{\tau}$ escolhido foi de maior valor, porque ele que represe
     plt.show()
 \end{verbatim}
 
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.3]{respostas.png}
+    \caption{Respostas as entradas u}
+\end{figure}
+
+\quad Legenda: y(t) experimental (Azul), y(t) do G(s) (Laranja), y(t) do $\hat{G}(s)$ (Verde)
+
 \section{Conclusão}
 
-\quad A discrepância entre os modelos de motor DC de armadura e os resultados experimentais ocorre devido a simplificações inerentes aos modelos teóricos, parâmetros variáveis do motor na prática e efeitos não considerados.
+\quad Neste relatório, enfatizou-se a importância de desenvolver modelos matemáticos para sistemas,
+permitindo simulações e previsões de comportamento.
+A discrepância entre os modelos de motor DC de armadura e os resultados experimentais ocorre devido a simplificações inerentes aos modelos teóricos,
+parâmetros variáveis do motor na prática e efeitos não considerados.
 Além disso, condições de operação realistas, como variações de carga e perturbações ambientais,
 afetam o desempenho do motor de maneira não capturada pelos modelos teóricos.
 Limitações na medição, como erros, ruído e atrasos de resposta,
