@@ -326,11 +326,11 @@ a energia cinética rotacional pode ser aproximada, porque pode ser válido a se
     \frac{\partial L}{ \partial \dot{\psi}} = ML^2\dot{\psi} + MRLcos(\psi)\dot{\theta} + j_\psi \dot{\psi} \\
     \frac{d}{dt} \left(\frac{\partial L}{ \partial \dot{\psi}}\right) = ML^2\ddot{\psi} + j_\psi \ddot{\psi} - MRLsin(\psi)\dot{\theta}\dot{\psi} + MRLcos(\psi)\ddot{\theta} \\
     \frac{\partial L}{ \partial \dot{\phi}} = m\frac{W^2}{2}\dot{\phi} + ML^2sin(\psi)^2\dot{\phi} + J_\phi \dot{\phi} \\
-    \frac{d}{dt} \left(\frac{\partial L}{ \partial \dot{\phi}}\right) = m\frac{W^2}{2}\ddot{\phi} + ML^2sin(\psi)^2\ddot{\phi} + 2L^2sin(\psi)cos(\psi)\dot\psi\dot\phi + J_\phi \ddot{\phi}
+    \frac{d}{dt} \left(\frac{\partial L}{ \partial \dot{\phi}}\right) = m\frac{W^2}{2}\ddot{\phi} + ML^2sin(\psi)^2\ddot{\phi} + 2ML^2sin(\psi)cos(\psi)\dot\psi\dot\phi + J_\phi \ddot{\phi}
 \end{gathered}
 \end{equation}
 
-\quad Utilizando a formulação de Lagrange foi determinado a dinâmica entre as coordenadas generalizadas $\lambda = \begin{bmatrix} \theta & \psi & \phi \end{bmatrix}^T$ e
+\quad (a) Utilizando a formulação de Lagrange foi determinado a dinâmica entre as coordenadas generalizadas $\lambda = \begin{bmatrix} \theta & \psi & \phi \end{bmatrix}^T$ e
 as forças (torques) generalizadas $F = \begin{bmatrix} F_{\theta} & F_{\psi} & F_{\phi} \end{bmatrix}^T$.
 
 \begin{equation}
@@ -343,7 +343,7 @@ as forças (torques) generalizadas $F = \begin{bmatrix} F_{\theta} & F_{\psi} & 
 \begin{gathered}
     \left[(2m + M)R^2 + J_w\right] \ddot{\theta} + MRLcos(\psi)\ddot{\psi} - MRLsin(\psi)\dot{\psi}^2 = F_{\theta} \\
     MRLcos(\psi)\ddot{\theta} + (ML^2 + J_\psi)\ddot{\psi} - ML^2sin(\psi)cos(\psi)\dot{\phi}^2 - MgLsin(\psi) = F_{\psi} \\
-    \left(m\frac{W^2}{2} + ML^2sin(\psi)^2 + J_\phi\right)\ddot{\phi} + 2L^2sin(\psi)cos(\psi)\dot{\psi}\dot{\phi} = F_{\phi}
+    \left(m\frac{W^2}{2} + ML^2sin(\psi)^2 + J_\phi\right)\ddot{\phi} + 2ML^2sin(\psi)cos(\psi)\dot{\psi}\dot{\phi} = F_{\phi}
 \end{gathered}
 \end{equation}
 
@@ -362,13 +362,124 @@ onde $M(\cdot) \in \mathbb{R}^{3 \times 3}, \ C(\cdot, \cdot) \in \mathbb{R}^3, 
     \begin{bmatrix}
         - MRLsin(\psi)\dot{\psi}^2 \\
         - ML^2sin(\psi)cos(\psi)\dot{\psi}^2 \\
-        2L^2sin(\psi)cos(\psi)\dot\psi\dot\phi
+        2ML^2sin(\psi)cos(\psi)\dot\psi\dot\phi
     \end{bmatrix} +
     \begin{bmatrix}
         0 \\
         - MgLsin(\psi) \\
         0
     \end{bmatrix} = F
+\end{equation}
+
+\quad (b) Determinando a relação entre as forças generalizadas e os torques de
+cada um das rodas $\{Fl,Fr\}$:
+
+\begin{equation}
+    F =
+    \begin{bmatrix}
+        F_{\theta} \\
+        F_{\psi} \\
+        F_{\phi}
+    \end{bmatrix} = E
+    \begin{bmatrix}
+        F_l \\
+        F_r
+    \end{bmatrix}
+\end{equation}
+
+onde $E \in \mathbb{R}^{3\times 2}$
+
+\quad Observando o sistema de pêndulo invertido e os graus de liberdade,
+é possível determinar as seguintes relações:
+
+\begin{equation}
+\begin{gathered}
+    F_\theta = F_l + F_r \\
+    F_\psi = - F_l - F_r \\
+    F_\phi = - \frac{W}{2R}F_l + \frac{W}{2R}F_r \\
+    F =
+    \begin{bmatrix}
+        F_{\theta} \\
+        F_{\psi} \\
+        F_{\phi}
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 & 1 \\
+        -1 & -1 \\
+        -\frac{W}{2R} & \frac{W}{2R}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_l \\
+        F_r
+    \end{bmatrix} 
+\end{gathered}
+\end{equation}
+
+\quad (c) Determinando a relação entre as forças (torques) generalizadas $\{F_\theta, F_\psi, F_\phi\}$
+e a tensão elétrica aplicada em cada motor $\{Vl,Vr\}$ utilizando o modelo de um motor DC:
+
+\begin{equation}
+    F = Q \dot\lambda + H
+    \begin{bmatrix}
+        V_l \\ V_r
+    \end{bmatrix}
+\end{equation}
+
+onde $Q \in \mathbb{R}^{3 \times 3}$ e $H \in \mathbb{R}^{3 \times 2}$.
+
+\quad Levando em consideração a Lei de Kirchhoff das Tensões, a Equação do Torque, a Lei do Motor e a Lei do Gerador.
+Além disso, o atrito entre o corpo e o motor e o indutância do motor DC $L_m$ é desprezível:
+
+\begin{equation}
+\begin{gathered}
+    F_{l,r} = nK_ti_{l,r} + f_m(\dot\psi - \dot\theta_{l,r}) \\
+    V_{l,r} + K_e(\dot\psi - \dot\theta_{l,r}) = L_m\dot{i}_{l_r} + R_mi_{l,r} \\
+    i_{l,r} = \frac{V_{l,r} + K_e(\dot\psi - \dot\theta_{l,r})}{R_m} \\
+    F_{l,r} = \left(\frac{nK_tK_e}{R_m} + f_m\right)(\dot\psi - \dot\theta_{l,r}) + \frac{nK_tV_{l,r}}{R_m}
+\end{gathered}
+\end{equation}
+
+\quad Pegando a relação (18) entre as forças generalizadas e os torques de
+cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (20):
+
+\begin{equation}
+\begin{gathered}
+    F =
+    \begin{bmatrix}
+        1 & 1 \\
+        -1 & -1 \\
+        -\frac{W}{2R} & \frac{W}{2R}
+    \end{bmatrix}
+    \begin{bmatrix}
+        F_l \\
+        F_r
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 & 1 \\
+        -1 & -1 \\
+        -\frac{W}{2R} & \frac{W}{2R}
+    \end{bmatrix}
+    \begin{bmatrix}
+        \left(\frac{nK_tK_e}{R_m} + f_m\right)(\dot\psi - \dot\theta_l) + \frac{nK_tV_r}{R_m} \\
+        \left(\frac{nK_tK_e}{R_m} + f_m\right)(\dot\psi - \dot\theta_r) + \frac{nK_tV_r}{R_m}
+    \end{bmatrix} \\
+    F =
+    \begin{bmatrix}
+        -2\left(\frac{nK_tK_e}{R_m} + f_m\right) & 2\left(\frac{nK_tK_e}{R_m} + f_m\right) & 0 \\
+        2\left(\frac{nK_tK_e}{R_m} + f_m\right) & -2\left(\frac{nK_tK_e}{R_m} + f_m\right) & 0 \\
+        0 & 0 & 0
+    \end{bmatrix}
+    \begin{bmatrix} \dot\theta \\ \dot\psi \\ \dot\phi \end{bmatrix}
+    +
+    \begin{bmatrix}
+        \frac{nK_t}{R_m} & \frac{nK_t}{R_m} \\
+        -\frac{nK_t}{R_m} & -\frac{nK_t}{R_m} \\
+        -\frac{W}{2R}\frac{nK_t}{R_m} & \frac{W}{2R}\frac{nK_t}{R_m}
+    \end{bmatrix}
+    \begin{bmatrix}
+        V_l \\ V_r
+    \end{bmatrix}
+\end{gathered}
 \end{equation}
 
 \end{document}
