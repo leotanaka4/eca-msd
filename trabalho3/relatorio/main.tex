@@ -283,13 +283,13 @@ a energia cinética translacional é dada por:
 \end{equation}
 
 \quad Utilizando a fórmula da energia cinética rotacional e considerando que $\dot{\theta} = (\dot{\theta}_l + \dot{\theta}_r)/2$,
-a energia cinética rotacional pode ser aproximada, porque para ângulos pequenos $\dot{\theta}_r \dot{\theta}_l \approx 0$ para ângulos pequenos e $J_m$ é desprezível. Logo:
+a energia cinética rotacional pode ser aproximada, porque pode ser válido a seguinte equação $\dot{\theta}_r \dot{\theta}_l \approx \dot{\theta}^2$ e $J_m$ é desprezível. Logo:
 
 \begin{equation}
 \begin{gathered}
     K_{rot} = \frac{1}{2} \vec{\omega} \cdot \mathbf{I} \cdot \vec{\omega} \\
     T_2 = \frac{J_{\phi}\dot{\phi}^2}{2} + \frac{J_{\psi}\dot{\psi}^2}{2} + \frac{J_w(\dot{\theta}_r^2 + \dot{\theta}_l^2)}{2} + \frac{J_m n^2(\dot{\theta}_l - \dot{\psi})^2}{2} + \frac{J_m n^2(\dot{\theta}_r - \dot{\psi})^2}{2} = \\
-    = \frac{J_{\phi}\dot{\phi}^2}{2} + \frac{J_{\psi}\dot{\psi}^2}{2} + J_w(2\dot{\theta}^2 - \dot{\theta}_l\dot{\theta}_r) + ? = \\
+    = \frac{J_{\phi}\dot{\phi}^2}{2} + \frac{J_{\psi}\dot{\psi}^2}{2} + J_w(2\dot{\theta}^2 - \dot{\theta}_l\dot{\theta}_r) + \frac{J_mn^2 (4\dot{\theta}^2 - 2\dot{\theta}_l\dot{\theta}_r - 4 \dot{\theta} + 2 \dot{\psi}^2)}{2} = \\
     = J_w \dot{\theta}^2 + \frac{1}{2} J_{\psi} \dot{\psi}^2 + \frac{1}{2} J_{\phi} \dot{\phi}^2 + n^2 J_m (\dot{\theta} - \dot{\psi})^2 = \\
     = J_w \dot{\theta}^2 + \frac{1}{2} J_{\psi} \dot{\psi}^2 + \frac{1}{2} J_{\phi} \dot{\phi}^2
 \end{gathered}
@@ -337,10 +337,38 @@ as forças (torques) generalizadas $F = \begin{bmatrix} F_{\theta} & F_{\psi} & 
     \frac{d}{dt}\left(\frac{\partial L}{\partial \dot{\lambda}}\right) - \frac{\partial L}{\partial \lambda} = F
 \end{equation}
 
-Esta dinâmica pode ser escrita em forma matricial como:
+\quad Utilizando a fórmula acima e outras equações (12) para começar a montar a forma matricial:
+
+\begin{equation}
+\begin{gathered}
+    \left[(2m + M)R^2 + J_w\right] \ddot{\theta} + MRLcos(\psi)\ddot{\psi} - MRLsin(\psi)\dot{\psi}^2 = F_{\theta} \\
+    MRLcos(\psi)\ddot{\theta} + (ML^2 + J_\psi)\ddot{\psi} - ML^2sin(\psi)cos(\psi)\dot{\phi}^2 - MgLsin(\psi) = F_{\psi} \\
+    \left(m\frac{W^2}{2} + ML^2sin(\psi)^2 + J_\phi\right)\ddot{\phi} + 2L^2sin(\psi)cos(\psi)\dot{\psi}\dot{\phi} = F_{\phi}
+\end{gathered}
+\end{equation}
+
+\quad Esta dinâmica pode ser escrita em forma matricial como:
 \begin{equation}
     M(\lambda) \ddot{\lambda} + C(\lambda, \dot{\lambda}) + G(\lambda) = F
 \end{equation}
 onde $M(\cdot) \in \mathbb{R}^{3 \times 3}, \ C(\cdot, \cdot) \in \mathbb{R}^3, \ G(\cdot) \in \mathbb{R}^3$.
+
+\begin{equation}
+    \begin{bmatrix}
+        (2m + M)R^2 + 2J_w & MRLcos(\psi) & 0 \\
+        MRLcos(\psi) & ML^2 + J_\psi & 0 \\
+        0 & 0 & M\frac{W^2}{2}+ML^2sin(\psi)^2+J_\phi
+    \end{bmatrix} \ddot{\lambda}+
+    \begin{bmatrix}
+        - MRLsin(\psi)\dot{\psi}^2 \\
+        - ML^2sin(\psi)cos(\psi)\dot{\psi}^2 \\
+        2L^2sin(\psi)cos(\psi)\dot\psi\dot\phi
+    \end{bmatrix} +
+    \begin{bmatrix}
+        0 \\
+        - MgLsin(\psi) \\
+        0
+    \end{bmatrix} = F
+\end{equation}
 
 \end{document}
