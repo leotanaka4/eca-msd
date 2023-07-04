@@ -519,7 +519,7 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
     \end{bmatrix}
 \end{equation}
 
-\quad Derivando as variáveis de estado do sistema e utilizando as representação (17) como base:
+\quad Derivando as variáveis de estado do sistema e utilizando as representação (24) como base:
 
 \begin{equation}
     \dot{x_1} = \dot\lambda = x_2 =
@@ -527,8 +527,7 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
         \dot\theta \\
         \dot\psi \\
         \dot\phi
-    \end{bmatrix}, \quad
-    \dot{x_2} = \ddot\lambda = M(\lambda)^{-1} \left( -C(\lambda,\dot\lambda) - G(\lambda) + F(\dot\lambda,V) \right)
+    \end{bmatrix}
 \end{equation}
 
 \quad Para calcular o $M(\lambda)^{-1}$, será necessário calcular o determinante:
@@ -571,6 +570,12 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
         0 & 0 & \frac{1}{M\frac{MW^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w}
     \end{bmatrix}
     $}
+\end{equation}
+
+\quad Com isso, tenho tudo que é preciso para preencher a seguinte equação:
+
+\begin{equation}
+    \dot{x_2} = \ddot\lambda = M(\lambda)^{-1} \left( -C(\lambda,\dot\lambda) - G(\lambda) + F(\dot\lambda,V) \right)
 \end{equation}
 
 \end{document}
