@@ -502,7 +502,7 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
 
 \section{Derivação e obtenção das equações de estado}
 
-\quad Defininado as variáveis de estado do sistema:
+\quad Definindo as variáveis de estado do sistema:
 
 \begin{equation}
     x_1 = \lambda =
@@ -575,7 +575,27 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
 \quad Com isso, tenho tudo que é preciso para preencher a seguinte equação:
 
 \begin{equation}
-    \dot{x_2} = \ddot\lambda = M(\lambda)^{-1} \left( -C(\lambda,\dot\lambda) - G(\lambda) + F(\dot\lambda,V) \right)
+    \dot{x_2} = \ddot\lambda = M(\lambda)^{-1} \left[ -C(\lambda,\dot\lambda) - G(\lambda) + F(\dot\lambda,V) \right]
 \end{equation}
+
+\section{Determinação dos pontos de equilíbrio do sistema}
+
+\quad Considerando $V_l = V_r = 0$, é possível determinar os pontos de equilíbrio de forma trivial.
+Já que um pêndulo invertido montado numa plataforma de 2 rodas só estará em equilíbro sem a diferença de potencial nos motores,
+quando estiver em pé ou de cabeça para baixo verticalmente e sem nenhuma velocidade angular em nenhuma das direções. Logo:
+
+\begin{equation}
+\begin{gathered}
+    \bar\psi = \{0,\pm\pi,\pm 2\pi,...,\pm n\pi\}, n \in \mathbb{N} \\
+    \bar{x}_2 =
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        0
+    \end{bmatrix}
+\end{gathered}
+\end{equation}
+
+Então, o $\bar\theta$ e o $\bar\phi$ podem ser quaisquer valores porque não afetam no equilíbrio do sistema.
 
 \end{document}
