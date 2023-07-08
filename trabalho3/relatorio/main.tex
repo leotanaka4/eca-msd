@@ -374,7 +374,7 @@ onde $M(\cdot) \in \mathbb{R}^{3 \times 3}, \ C(\cdot, \cdot) \in \mathbb{R}^3, 
     \begin{bmatrix}
         (2m + M)R^2 + 2J_w & MRLcos(\psi) & 0 \\
         MRLcos(\psi) & ML^2 + J_\psi & 0 \\
-        0 & 0 & M\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w
+        0 & 0 & m\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w
     \end{bmatrix} \ddot{\lambda}+
     \begin{bmatrix}
         - MRLsin(\psi)\dot{\psi}^2 \\
@@ -538,10 +538,10 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
     \begin{vmatrix}
         (2m + M)R^2 + 2J_w & MRLcos(\psi) & 0 \\
         MRLcos(\psi) & ML^2 + J_\psi & 0 \\
-        0 & 0 & M\frac{MW^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w \\
+        0 & 0 & m\frac{W^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w \\
     \end{vmatrix} = \\
     \scalebox{0.85}{$
-    = [(2m + M)R^2 + 2J_w](ML^2 + J_\psi)(M\frac{MW^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w) -  M^2R^2L^2cos(\psi)^2(M\frac{MW^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w)
+    = [(2m + M)R^2 + 2J_w](ML^2 + J_\psi)(m\frac{W^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w) -  M^2R^2L^2cos(\psi)^2(m\frac{W^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w)
     $}
 \end{gathered}
 \end{equation}
@@ -552,8 +552,8 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
     \scalebox{0.65}{$
     M_{adj} =
     \begin{bmatrix}
-        (ML^2 + J_\psi)(M\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & -MRLcos(\psi)(M\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & 0 \\
-        -MRLcos(\psi)(M\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & [(2m + M)R^2 + 2J_w](M\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & 0 \\
+        (ML^2 + J_\psi)(m\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & -MRLcos(\psi)(m\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & 0 \\
+        -MRLcos(\psi)(m\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & [(2m + M)R^2 + 2J_w](m\frac{W^2}{2}+ML^2sin(\psi)^2+J_{\phi}+\frac{W^2}{2R^2}J_w) & 0 \\
         0 & 0 & [(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2cos(\psi)^2
     \end{bmatrix}
     $}
@@ -567,7 +567,7 @@ cada um das rodas $\{Fl,Fr\}$ e substituindo $\{Fl,Fr\}$ pelos valores obtidos (
     \begin{bmatrix}
         \frac{ML^2 + J_\psi}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2cos(\psi)^2} & -\frac{MRLcos(\psi)}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2cos(\psi)^2} & 0 \\
         -\frac{MRLcos(\psi)}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2cos(\psi)^2} & \frac{(2m + M)R^2 + 2J_w}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2cos(\psi)^2} & 0 \\
-        0 & 0 & \frac{1}{M\frac{MW^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w}
+        0 & 0 & \frac{1}{m\frac{W^2}{2} + MLsin(\psi)^2 + J_\phi + \frac{W^2}{2R^2}J_w}
     \end{bmatrix}
     $}
 \end{equation}
