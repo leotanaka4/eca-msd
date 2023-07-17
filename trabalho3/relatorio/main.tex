@@ -596,6 +596,84 @@ quando estiver em pé ou de cabeça para baixo verticalmente e sem nenhuma veloc
 \end{gathered}
 \end{equation}
 
-Então, o $\bar\theta$ e o $\bar\phi$ podem ser quaisquer valores porque não afetam no equilíbrio do sistema.
+\quad Então, o $\bar\theta$ e o $\bar\phi$ podem ser quaisquer valores porque não afetam no equilíbrio do sistema.
+
+\section{Simulação do sistema não linear com $V_l = V_r = 0$}
+
+\quad Podemos simular numericamente o sistema através da função ode45 no matlab ou
+de uma S-functions com um bloco do mesmo nome no Simulink
+
+\quad (a) Função ode45($\cdot$)
+
+\quad (b) S-functions
+
+\section{Linearização do sistema com $\psi = 0$}
+
+\quad O sistema será linearizado em relação ao ponto de equilíbrio quando $\psi = 0$. Logo,
+teremos as seguintes aproximações:
+
+\begin{equation}
+\begin{gathered}
+    \overset{\sim}{\theta} = \theta - \bar\theta ,
+    \overset{\sim}{\psi} = \psi - \bar\psi ,
+    \overset{\sim}{\phi} = \phi - \bar\phi \\
+    \dot{\overset{\sim}{\theta}} = \dot\theta - \dot{\bar\theta} ,
+    \dot{\overset{\sim}{\psi}} = \dot\psi - \dot{\bar\psi} ,
+    \dot{\overset{\sim}{\phi}} = \dot\phi - \dot{\bar\phi} \\
+    sin{\psi} = \overset{\sim}{\psi} \\
+    cos{\psi} = 1
+\end{gathered}
+\end{equation}
+
+\quad Assim, obtemos a linearização do sistema:
+
+\begin{equation}
+\begin{gathered}
+    M^{-1} =
+    \begin{bmatrix}
+        \frac{ML^2 + J_\psi}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2} & -\frac{MRL}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2} & 0 \\
+        -\frac{MRL}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2} & \frac{(2m + M)R^2 + 2J_w}{[(2m + M)R^2 + 2J_w](ML^2 + J_\psi) - M^2R^2L^2} & 0 \\
+        0 & 0 & \frac{1}{m\frac{W^2}{2} + \frac{W^2}{2R^2}J_w}
+    \end{bmatrix} \\
+    C =
+    \begin{bmatrix}
+        0 \\ 0 \\ 0
+    \end{bmatrix} \\
+    G(\lambda) =
+    \begin{bmatrix}
+        0 \\ -MgL\overset{\sim}{\psi} \\ 0
+    \end{bmatrix} \\
+    \dot{\overset{\sim}{x_1}} = \begin{bmatrix}
+        \dot{\overset{\sim}{\theta}} \\
+        \dot{\overset{\sim}{\psi}} \\
+        \dot{\overset{\sim}{\phi}}
+    \end{bmatrix} \\
+    \dot{\overset{\sim}{x_2}} = M^{-1} \left[ - G( \overset{\sim}{\lambda} ) + F( \dot{\overset{\sim}{\lambda}} , \overset{\sim}{V} ) \right]
+\end{gathered}
+\end{equation}
+
+\section{Simulação do sistema linearizado com $F=0$}
+
+\section{Controle realimentado}
+
+O sistema considerado é instável em $\psi = 0$.
+Desta forma é projetado o seguinte controlerealimentado:
+
+\begin{equation}
+    u = -Kx + Nr
+\end{equation}
+
+onde $u^T = [V_l \quad V_r], \quad x^T = [\theta \quad \psi \quad \phi \quad \dot{\theta} \quad \dot{\psi} \quad \dot{\phi}]$,
+r é uma entrada de referências para comandar sistema para frente, $N^T = [-0.7071 \quad 0.7071]$ e
+
+\begin{equation}
+    K = \begin{bmatrix}
+    -0.0224 & -25.4867 & -0.7071 & -1.0362 & -2.2530 & -0.0076 \\
+    -0.0224 & -25.4867 & 0.7071 & -1.0362 & -2.2530 & 0.0076 \\
+\end{bmatrix}
+\end{equation}
+
+Foi simulado a resposta do sistema não linear com este controle realimentado,
+considerando diferentes condições iniciais.
 
 \end{document}
