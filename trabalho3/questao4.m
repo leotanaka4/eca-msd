@@ -1,7 +1,7 @@
 function pendulum_simulation()
 
     % Initial conditions
-    x0 = [0; 0.18; 0; 0; 0; 0]; % [theta; psi; phi; dot{theta}; dot{psi}; dot{phi}]
+    x0 = [0; 0; 0; 0; 0; 0]; % [theta; psi; phi; dot{theta}; dot{psi}; dot{phi}]
 
     % Time span for simulation
     tspan = 0:0.01:10; % From 0 to 10 seconds with a time step of 0.01 seconds
@@ -24,37 +24,37 @@ function pendulum_simulation()
     plot(t, theta, 'b', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\theta (rad)');
-    title('Pendulum Motion: \theta vs. Time');
+    title('\theta vs. Time');
 
     subplot(3, 2, 3);
     plot(t, psi, 'r', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\psi (rad)');
-    title('Pendulum Motion: \psi vs. Time');
+    title('\psi vs. Time');
 
     subplot(3, 2, 5);
     plot(t, phi, 'g', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\phi (rad)');
-    title('Pendulum Motion: \phi vs. Time');
+    title('\phi vs. Time');
 
     subplot(3, 2, 2);
     plot(t, dot_theta, 'b', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\dot{\theta} (rad/s)');
-    title('Pendulum Motion: \dot{\theta} vs. Time');
+    title('\dot{\theta} vs. Time');
 
     subplot(3, 2, 4);
     plot(t, dot_psi, 'r', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\dot{\psi} (rad/s)');
-    title('Pendulum Motion: \dot{\psi} vs. Time');
+    title('\dot{\psi} vs. Time');
 
     subplot(3, 2, 6);
     plot(t, dot_phi, 'g', 'LineWidth', 1.5);
     xlabel('Time (s)');
     ylabel('\dot{\phi} (rad/s)');
-    title('Pendulum Motion: \dot{\phi} vs. Time');
+    title('\dot{\phi} vs. Time');
 
 end
 

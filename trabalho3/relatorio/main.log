@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  19 JUL 2023 09:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  19 JUL 2023 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,19 +512,41 @@ File: ./images//ode45_2.png Graphic file (type png)
 <use ./images//ode45_2.png>
 Package pdftex.def Info: ./images//ode45_2.png  used on input line 645.
 (pdftex.def)             Requested size: 466.16035pt x 219.51831pt.
- [9 <./images//ode45_1.png (PNG copy)> <./images//ode45_2.png (PNG copy)>] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] (main.aux) ) 
+ [9 <./images//ode45_1.png (PNG copy)> <./images//ode45_2.png (PNG copy)>]
+<./images//solve_ivp_1.png, id=58, 1110.0672pt x 544.9158pt>
+File: ./images//solve_ivp_1.png Graphic file (type png)
+<use ./images//solve_ivp_1.png>
+Package pdftex.def Info: ./images//solve_ivp_1.png  used on input line 662.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+<./images//solve_ivp_2.png, id=59, 1110.0672pt x 544.9158pt>
+File: ./images//solve_ivp_2.png Graphic file (type png)
+<use ./images//solve_ivp_2.png>
+Package pdftex.def Info: ./images//solve_ivp_2.png  used on input line 668.
+(pdftex.def)             Requested size: 444.01901pt x 217.96245pt.
+ [10 <./images//solve_ivp_1.png> <./images//solve_ivp_2.png>] [11]
+<./images//ode45_1_r.png, id=68, 2035.605pt x 958.58125pt>
+File: ./images//ode45_1_r.png Graphic file (type png)
+<use ./images//ode45_1_r.png>
+Package pdftex.def Info: ./images//ode45_1_r.png  used on input line 745.
+(pdftex.def)             Requested size: 346.04828pt x 162.95665pt.
+<./images//ode45_2_r.png, id=69, 2035.605pt x 958.58125pt>
+File: ./images//ode45_2_r.png Graphic file (type png)
+<use ./images//ode45_2_r.png>
+Package pdftex.def Info: ./images//ode45_2_r.png  used on input line 751.
+(pdftex.def)             Requested size: 346.04828pt x 162.95665pt.
+ [12 <./images//ode45_1_r.png (PNG copy)> <./images//ode45_2_r.png (PNG copy)>] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 17427 strings out of 478338
- 335407 string characters out of 2836700
- 1287297 words of memory out of 3000000
- 35550 multiletter control sequences out of 15000+600000
+ 17465 strings out of 478338
+ 336349 string characters out of 2836700
+ 1353297 words of memory out of 3000000
+ 35584 multiletter control sequences out of 15000+600000
  479692 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,16n,80p,483b,2368s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 538003 bytes).
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (22 pages, 885660 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 189 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

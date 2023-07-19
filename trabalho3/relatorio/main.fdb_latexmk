@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1689769799 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" "main.pdf" "main" 1689769801
+["pdflatex"] 1689797836 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" "main.pdf" "main" 1689797838
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689730049 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -45,6 +45,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1247596666 32716 08e384dc442464e7285e891af9f45947 ""
+  "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1247596667 31099 342ef5a582aacbd3346f3cf4579679fa ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1247596666 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb" 1247596670 30457 bc0868ebece724ed7c3d37e3d9bff7bd ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
@@ -156,13 +157,17 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" 1689769796 39867 9158089dcd53c663519d5e3d6bed771e ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" 1689797833 44860 703135bb46084f292621cbbfb4335e6d ""
   "images//fig1.png" 1687817527 8659 3992e9c4281b937a3bb05d5d61c59c84 ""
   "images//fig2.png" 1687817519 49026 1bbce8a6ff432c768769cdb58ae31072 ""
-  "images//ode45_1.png" 1689731234 143502 f077e0428fdbedb227ac5d45c4195cd7 ""
-  "images//ode45_2.png" 1689731270 67738 77dfd3dcb3c438a67336cd536a0ab8c7 ""
-  "main.aux" 1689769801 2335 59cb68d912e584dcaea6ced75a43cf63 "pdflatex"
-  "main.tex" 1689769796 39867 9158089dcd53c663519d5e3d6bed771e ""
+  "images//ode45_1.png" 1689795226 140227 db38cc5b5b8a96506199a4b0ae89824d ""
+  "images//ode45_1_r.png" 1689797173 109317 b37401c7a4136e8c25ddfdc6a3932dcb ""
+  "images//ode45_2.png" 1689795263 64580 376a326dd409c4ec89b1bdaee026940c ""
+  "images//ode45_2_r.png" 1689797345 104596 172a46d556bc69b125f3c90414b8f1f3 ""
+  "images//solve_ivp_1.png" 1689796112 102231 36f6590b2a5d6c5c75b85c8faf063f7f ""
+  "images//solve_ivp_2.png" 1689796175 45577 b5f9cf637157b9d5383d220d3127457f ""
+  "main.aux" 1689797838 3148 65da476d412fe2fbff26272f2e1a189c "pdflatex"
+  "main.tex" 1689797833 44860 703135bb46084f292621cbbfb4335e6d ""
   (generated)
   "main.aux"
   "main.log"
