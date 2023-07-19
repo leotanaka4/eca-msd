@@ -1,7 +1,7 @@
 % Init
 clear all
 
-x0 = [0;0;0;0;0;0];
+x0 = [0;0.18;0;0;0;0];
  
 %%  Simulacao via ODE45
 

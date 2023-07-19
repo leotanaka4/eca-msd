@@ -24,19 +24,13 @@ Ke=0.4; % e constante de EMF (V s/rad)
 fm=0.0022; % atrito entre o corpo e o motor
 n=1; % redução do motor
 
-MInversa=[(M*L^2+Jpsi)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2) -M*R*L*cos(x2)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2) 0;
-    -M*R*L*cos(x2)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2) ((2*m+M)*R^2+2*Jw)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2) 0;
-    0 0 1/(m*W^2/2+M*L*sin(x2)^2+Jphi+W^2/2/R^2*Jw)];
-C=[-M*R*L*sin(x2)*x5^2;-M*L^2*sin(x2)*cos(x2)*x5^2;2*M*L^2*sin(x2)*cos(x2)*x5*x6];
-G=[0;-M*g*L*sin(x2);0];
-Q=[-2*(n*Kt*Ke/Rm+fm) 2*(n*Kt*Ke/Rm+fm) 0; 2*(n*Kt*Ke/Rm+fm) -2*(n*Kt*Ke/Rm+fm) 0;0 0 -W^2/2/R^2*(n*Kt*Ke/Rm+fm)].*[x4;x5;x6];
-ddlambda=MInversa*(-C-G+Q);
+beta=n*Kt*Ke/Rm+fm;
 
 dx1=x4;
 dx2=x5;
 dx3=x6;
-dx4=ddlambda(1);
-dx5=ddlambda(2);
-dx6=ddlambda(3);
+dx4=(M*L^2+Jpsi)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2)*(-2*beta*x4+2*beta*x5+M*R*L*sin(x2)*x5.^2)-(M*R*L*cos(x2))/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2)*(2*beta*x4-2*beta*x5+M*L^2*sin(x2)*cos(x2)*x5^2+M*g*L*sin(x2));
+dx5=-(M*R*L*cos(x2))/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2)*(-2*beta*x4+2*beta*x5+M*R*L*sin(x2)*x5.^2)+((2*m+M)*R^2+2*Jw)/(((2*m+M)*R^2+2*Jw)*(M*L^2+Jpsi)-M^2*R^2*L^2*cos(x2)^2)*(2*beta*x4-2*beta*x5+M*L^2*sin(x2)*cos(x2)*x5^2+M*g*L*sin(x2));
+dx6=1/(m*W^2/2+M*L*sin(x2)^2+Jphi+W^2/(2*R^2)*Jw)*(-W^2/((2*R^2)*beta*x6-2*M*L^2*sin(x2)*cos(x2)*x5*x6));
 
 dx=[dx1; dx2; dx3; dx4; dx5; dx6];
