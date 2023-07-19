@@ -669,6 +669,8 @@ o que acaba comprovando um dos casos propostos na parte 3 do relatório.
     \caption{Simulação com condições iniciais x0 = [0; 0; 0; 0; 0; 0]}
 \end{figure}
 
+\newpage
+
 \section{Linearização do sistema com $\psi = 0$}
 
 \quad O sistema será linearizado em relação ao ponto de equilíbrio quando $\psi = 0$. Logo,
@@ -714,7 +716,27 @@ teremos as seguintes aproximações:
 \end{gathered}
 \end{equation}
 
-\section{Simulação do sistema linearizado com $F=0$}
+\newpage
+
+\section{Simulação do sistema linearizado com $V_l = V_r = 0$}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{ode45_1_l.png}
+    \caption{Simulação com condições iniciais x0 = [0; 0.18; 0; 0; 0; 0]}
+\end{figure}
+
+\quad Observando o gráfico fica bem claro que a linearização não é muito conveniente após passar de $\psi > \pi$.
+É possível ver a gigantesca de diferença entre o sistema não-linear e o sistema linearizado.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{ode45_2_l.png}
+    \caption{Simulação com condições iniciais x0 = [0; 0; 0; 0; 0; 0]}
+\end{figure}
+
+\quad Já no caso de colocar as condições iniciais $x0 = [0; 0; 0; 0; 0; 0]$,
+o comportamento do sistema se mantém no ponto de equilíbrio.
 
 \newpage
 

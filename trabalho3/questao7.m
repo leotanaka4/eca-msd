@@ -91,7 +91,7 @@ function dx = penduloinvertido_f(t, x)
     M_inv = inv([
         R^2 * (2 * m + M) + 2 * Jw, M * R * L * cos(psi), 0;
         M * R * L * cos(psi), M * L^2 + Jpsi, 0;
-        0, 0, m * (W^2 / 2) + Jphi + (W^2 / (2 * R^2)) * Jw
+        0, 0, m * (W^2 / 2) + M * L * sin(psi)^2 + Jphi + (W^2 / (2 * R^2)) * Jw
     ]);
 
     % Matriz G

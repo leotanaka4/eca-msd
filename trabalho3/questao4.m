@@ -1,7 +1,7 @@
 function pendulum_simulation()
 
     % Initial conditions
-    x0 = [0; 0; 0; 0; 0; 0]; % [theta; psi; phi; dot{theta}; dot{psi}; dot{phi}]
+    x0 = [0; 0.18; 0; 0; 0; 0]; % [theta; psi; phi; dot{theta}; dot{psi}; dot{phi}]
 
     % Time span for simulation
     tspan = 0:0.01:10; % From 0 to 10 seconds with a time step of 0.01 seconds
@@ -59,39 +59,39 @@ function pendulum_simulation()
 end
 
 function dx = penduloinvertido_f(t, x)
-    % Variáveis de estado
+    % Variaveis de estado
     theta = x(1);
     psi = x(2);
     phi = x(3);
 
-    % Derivadas das variáveis de estado
+    % Derivadas das variaveis de estado
     theta_dot = x(4);
     psi_dot = x(5);
     phi_dot = x(6);
 
-    % Parâmetros do sistema
+    % Parametros do sistema
     g = 9.8;  % gravidade
     m = 0.03; % peso da roda
     R = 0.04; % raio da roda
-    Jw = m * R^2 / 2; % momento de inércia da roda
+    Jw = m * R^2 / 2; % momento de inercia da roda
     M = 0.6;  % peso do corpo
     W = 0.14; % largura do corpo
     D = 0.04; % profundidade do corpo
     H = 0.144; % altura do corpo
-    L = H / 2; % distância do centro de massa do corpo ao eixo da roda
-    Jphi = M * L^2 / 3; % momento de inércia do corpo em pitch
-    Jpsi = M * (W^2 + D^2) / 12; % momento de inércia do corpo em rumo
-    Rm = 6.69; % resistência do motor DC
+    L = H / 2; % distancia do centro de massa do corpo ao eixo da roda
+    Jphi = M * L^2 / 3; % momento de inercia do corpo em pitch
+    Jpsi = M * (W^2 + D^2) / 12; % momento de inercia do corpo em rumo
+    Rm = 6.69; % resistencia do motor DC
     Kt = 0.4; % constante de torque (Nm/A)
     Ke = 0.4; % e constante de EMF (V s/rad)
     fm = 0.0022; % atrito entre o corpo e o motor
-    n = 1; % redução do motor
+    n = 1; % reducao do motor
 
-    % Matriz de inércia inversa
+    % Matriz de inercia inversa
     M_inv = inv([
         R^2 * (2 * m + M) + 2 * Jw, M * R * L * cos(psi), 0;
         M * R * L * cos(psi), M * L^2 + Jpsi, 0;
-        0, 0, m * (W^2 / 2) + Jphi + (W^2 / (2 * R^2)) * Jw
+        0, 0, m * (W^2 / 2) + M * L * sin(psi)^2 + Jphi + (W^2 / (2 * R^2)) * Jw
     ]);
 
     % Matriz G
@@ -120,7 +120,7 @@ function dx = penduloinvertido_f(t, x)
     % Vetor de entrada
     V = [0; 0]; % [V_l; V_r]
 
-    % Sistema de equações diferenciais
+    % Sistema de equacoes diferenciais
     dx = zeros(6, 1);
     dx(1:3) = [theta_dot; psi_dot; phi_dot];
     dx(4:6) = M_inv * (F - G - C);
