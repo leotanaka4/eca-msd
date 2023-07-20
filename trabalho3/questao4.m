@@ -126,5 +126,4 @@ function dx = penduloinvertido_f(t, x)
     dx(4:6) = M_inv * (F - G - C);
 end
 
-% Call the simulation function to run the simulation and plot the results
 pendulum_simulation();
