@@ -653,6 +653,109 @@ o que acaba comprovando um dos casos propostos na parte 3 do relatório.
 
 \quad (b) S-functions (Simulink)
 
+\quad Não foi possível implementar a S-function, porque o Simulink que está disponível atualmente r2023a não consegue rodar o template que foi enviado.
+Então, vou mostrar o máximo que consegui chegar de desenvolvimento. Começando pelo penduloinvertido.m :
+
+\begin{lstlisting}[caption={penduloinvertido.m}, label=lst:pendulum_dead]
+    function [sys,x0,str,ts] = penduloinvertido(t,x,flag)
+        switch flag
+            case 0
+                str = [] ;
+                ts = [0 0] ;
+                s = simsizes ;
+                s.NumContStates = 6;
+                s.NumDiscStates = 0 ;
+                s.NumOutputs = 6 ;
+                s.NumInputs = 2 ;
+                s.DirFeedthrough = 0 ;
+                s.NumSampleTimes = 1 ;
+                sys = simsizes(s) ;
+                x0 = [0 0 0 0 0 0] ;
+            case 1
+                sys = penduloinvertido_f(t,x) ;
+            case 3
+                sys = x;
+            case {2 4 9}
+                sys =[];
+            otherwise
+                error(['unhandled flag =',num2str(flag)]) ;
+        end
+    end
+\end{lstlisting}
+
+\quad Além disso a função que estaria na S-function:
+
+\begin{lstlisting}[caption={penduloinvertido\_f.m}, label=lst:pendulum_dead2]
+    function dx = penduloinvertido_f(t, x)
+        % Variaveis de estado
+        theta = x(1);
+        psi = x(2);
+        phi = x(3);
+        % Derivadas das variaveis de estado
+        theta_dot = x(4);
+        psi_dot = x(5);
+        phi_dot = x(6);
+        % Parametros do sistema
+        g = 9.8;  % gravidade
+        m = 0.03; % peso da roda
+        R = 0.04; % raio da roda
+        Jw = m * R^2 / 2; % momento de inercia da roda
+        M = 0.6;  % peso do corpo
+        W = 0.14; % largura do corpo
+        D = 0.04; % profundidade do corpo
+        H = 0.144; % altura do corpo
+        L = H / 2; % distancia do centro de massa do corpo ao eixo da roda
+        Jphi = M * L^2 / 3; % momento de inercia do corpo em pitch
+        Jpsi = M * (W^2 + D^2) / 12; % momento de inercia do corpo em rumo
+        Rm = 6.69; % resistencia do motor DC
+        Kt = 0.4; % constante de torque (Nm/A)
+        Ke = 0.4; % e constante de EMF (V s/rad)
+        fm = 0.0022; % atrito entre o corpo e o motor
+        n = 1; % reducao do motor
+        % Matriz de inercia inversa
+        M_inv = inv([
+            R^2 * (2 * m + M) + 2 * Jw, M * R * L * cos(psi), 0;
+            M * R * L * cos(psi), M * L^2 + Jpsi, 0;
+            0, 0, m * (W^2 / 2) + M * L * sin(psi)^2 + Jphi + (W^2 / (2 * R^2)) * Jw
+        ]);
+        % Matriz G
+        G = [
+            0;
+            -M * g * L * sin(psi);
+            0];
+        % Matriz C
+        C = [
+            -M * R * L * sin(psi) * psi_dot^2;
+            -M * L^2 * sin(psi) * cos(psi) * phi_dot^2;
+            M * L^2 * sin(2 * psi) * psi_dot * phi_dot
+        ];
+        % Matriz Q
+        Q = [
+            -2 * ((n * Kt * Ke / Rm) + fm), 2 * ((n * Kt * Ke / Rm) + fm), 0;
+            2 * ((n * Kt * Ke / Rm) + fm), -2 * ((n * Kt * Ke / Rm) + fm), 0;
+            0, 0, -W^2 / (2 * R^2) * ((n * Kt * Ke / Rm) + fm)
+        ];
+        F = Q*[theta_dot; psi_dot; phi_dot]
+        % Vetor de entrada
+        V = [0; 0]; % [V_l; V_r]
+        % Sistema de equacoes diferenciais
+        dx = zeros(6, 1);
+        dx(1:3) = [theta_dot; psi_dot; phi_dot];
+        dx(4:6) = M_inv * (F - G - C);
+    end
+\end{lstlisting}
+
+\quad Ademais, montei no simulink como funcionaria o sistema não-linear.
+Tendo uma entrada com amplitude $0$ e seis saídas que seriam os estados do sistema que poderiam ser visualizadas pelos scopes.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{simulink.png}
+    \caption{Simulink}
+\end{figure}
+
+\newpage
+
 \quad (c) scipy.integrate.solve\_ivp (Python):
 
 \quad Foi obtido um resultado muito similar ao da função ode45 do Matlab:

@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1689806609 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" "main.pdf" "main" 1689806611
+["pdflatex"] 1689814782 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" "main.pdf" "main" 1689814784
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689730049 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683757891 11548 f0501c9ad67d0989464b2884f5d9d9d9 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
@@ -157,7 +157,7 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" 1689806608 45615 ecd3930146717bdc039fe162650b50e7 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho3/relatorio/main.tex" 1689814781 49437 51e48d608180ad6b86d0fecb74964563 ""
   "images//fig1.png" 1687817527 8659 3992e9c4281b937a3bb05d5d61c59c84 ""
   "images//fig2.png" 1687817519 49026 1bbce8a6ff432c768769cdb58ae31072 ""
   "images//ode45_1.png" 1689795226 140227 db38cc5b5b8a96506199a4b0ae89824d ""
@@ -166,10 +166,11 @@
   "images//ode45_2.png" 1689795263 64580 376a326dd409c4ec89b1bdaee026940c ""
   "images//ode45_2_l.png" 1689806031 61677 dac46658354e182b3f95efddfb54c10b ""
   "images//ode45_2_r.png" 1689797345 104596 172a46d556bc69b125f3c90414b8f1f3 ""
+  "images//simulink.png" 1689813705 15971 1ebcdd9e5c9eabf4eccab7736a639d38 ""
   "images//solve_ivp_1.png" 1689796112 102231 36f6590b2a5d6c5c75b85c8faf063f7f ""
   "images//solve_ivp_2.png" 1689796175 45577 b5f9cf637157b9d5383d220d3127457f ""
-  "main.aux" 1689806611 3489 c0c82b55f4ca2467e683f3a9cad2fefe "pdflatex"
-  "main.tex" 1689806608 45615 ecd3930146717bdc039fe162650b50e7 ""
+  "main.aux" 1689814784 3901 c3d7c8a487f509e3bc1c939c5c7d1d7c "pdflatex"
+  "main.tex" 1689814781 49437 51e48d608180ad6b86d0fecb74964563 ""
   (generated)
   "main.aux"
   "main.log"

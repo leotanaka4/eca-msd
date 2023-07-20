@@ -630,6 +630,14 @@ INPUT .\images\\ode45_2.png
 INPUT .\images\\ode45_2.png
 INPUT .\images\\ode45_2.png
 INPUT .\images\\ode45_2.png
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
+INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
+INPUT .\images\\simulink.png
+INPUT images\\simulink.png
+INPUT .\images\\simulink.png
+INPUT .\images\\simulink.png
+INPUT .\images\\simulink.png
+INPUT .\images\\simulink.png
 INPUT .\images\\solve_ivp_1.png
 INPUT images\\solve_ivp_1.png
 INPUT .\images\\solve_ivp_1.png
@@ -666,8 +674,6 @@ INPUT .\images\\ode45_2_r.png
 INPUT .\images\\ode45_2_r.png
 INPUT .\images\\ode45_2_r.png
 INPUT .\images\\ode45_2_r.png
-INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT C:\Users\Lucas\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt8.tfm
 INPUT main.aux
 INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\Lucas\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
