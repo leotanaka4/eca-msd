@@ -113,44 +113,6 @@ partes extremas com os mesmos valores que a parte central. Já no gráfico de fa
 observar uma oscilação bem similar entre 0.4 e 1.6 e
 outras oscilações similares entre (0.03 e 0.4) e (1.6 e 1.96) com valores entre $-\pi$ e $\pi$.
 
-\small
-\begin{verbatim}
-    % Carregar os dados do arquivo
-    data = load('trabalho4-2023-1.mat');
-    u = data.u;
-    t = data.t;
-    % Frequência de amostragem (fs) e período de amostragem (T)
-    fs = 2; % Hz
-    T = 1 / fs;
-    % Calcula o espectro do sinal de entrada u(t) usando a FFT
-    U = fft(u);
-    % Vetor de frequências para o eixo x
-    frequencies = (0:length(U) - 1) * (fs / length(U));
-    % Módulo do espectro do sinal de entrada
-    modulo_U = abs(U);
-    % Fase do espectro do sinal de entrada
-    fase_U = angle(U);
-    % Cores para os plots
-    cor_modulo = 'b'; % Azul
-    cor_fase = 'r';   % Vermelho
-    % Plot do espectro do sinal de entrada (módulo e fase)
-    figure;
-    % Plot do módulo do espectro
-    subplot(2, 1, 1);
-    stem(frequencies, modulo_U, 'Color', cor_modulo);
-    xlabel('Frequência (Hz)');
-    ylabel('Módulo');
-    title('Módulo do espectro do Sinal de Entrada u(t)');
-    grid on;
-    % Plot da fase do espectro
-    subplot(2, 1, 2);
-    stem(frequencies, fase_U, 'Color', cor_fase);
-    xlabel('Frequência (Hz)');
-    ylabel('Fase (rad)');
-    title('Fase do Espectro do Sinal de Entrada u(t)');
-    grid on;
-\end{verbatim}
-
 \section{Resposta em frequência do sistema G(jw)}
 
 \quad Estimando a resposta em frequência do sistema G(jw) utilizando os espectros dos sinais
@@ -158,33 +120,109 @@ de entrada U(jw) e de saída Y(jw):
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.26]{g.png}
+    \includegraphics[scale=0.34]{g.png}
+    \caption{Resposta em frequência do sistema G(jw)}
+\end{figure}
+
+\section{Principais caracteríticas da resposta em frequência}
+
+\newpage
+
+\section{Determinação do sistema de $2\textsuperscript{a}$ ordem}
+
+\quad Para determinar o sistema de $2\textsuperscript{a}$ ordem que tem resposta em frequência mais próxima com a estimada,
+foi feito diversos testes trocando as constantes $\zeta$ e $w_n$
+até chegar numa visualização bem próxima entre as duas respostas em frequência.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.35]{g_manual.png}
     \caption{Resposta em frequência}
 \end{figure}
 
-\small
+\quad Foi utilizada a seguinte fórmula que representa a função de transferência de um sistema de $2\textsuperscript{a}$ ordem:
+
+\begin{equation}
+    G(s) = \frac{\omega_n^2}{s^2 + 2 \zeta \cdot \omega_n \cdot s + \omega_n^2}
+\end{equation}
+
+\quad Os valores obtidos foram:
+
+\begin{equation}
+    w_n = 0.2 \ e \ \zeta = 0.25
+\end{equation}
+
+\newpage
+
+\section{System Identification Apps}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{g.png}
+    \caption{Resposta em frequência do sistema G(jw)}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{g.png}
+    \caption{Resposta em frequência do sistema G(jw)}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.2]{g.png}
+    \caption{Resposta em frequência do sistema G(jw)}
+\end{figure}
+
+\newpage
+
+\begin{appendices}
+
+\section{Código 1}
+
 \begin{verbatim}
-    % Carregar o arquivo 'trabalho4-2023-1.mat'
-    load('trabalho4-2023-1.mat');
-    % Frequência de amostragem
-    fs = 2; % Hz
-    % Realizar a FFT do sinal de entrada 'u'
-    U = fft(u);
-    U_mag = abs(U);
-    U_phase = angle(U);
-    % Realizar a FFT do sinal de saída 'y'
-    Y = fft(y);
-    Y_mag = abs(Y);
-    Y_phase = angle(Y);
-    % Estimar a resposta em frequência do sistema G(jw)
-    G_estimated = Y ./ U;
+    data = load('trabalho4-2023-1.mat'); % Carregar os dados do arquivo
+    u = data.u;
+    t = data.t;
+    fs = 2; % Hz % Frequência de amostragem (fs) e período de amostragem (T)
+    T = 1 / fs;
+    U = fft(u); % Calcula o espectro do sinal de entrada u(t) usando a FFT
+    frequencies = (0:length(U) - 1) * (fs / length(U)); % Vetor de frequências para o eixo x
+    modulo_U = abs(U); % Módulo do espectro do sinal de entrada
+    fase_U = angle(U); % Fase do espectro do sinal de entrada
+    % Cores para os plots
+    cor_modulo = 'b'; % Azul
+    cor_fase = 'r';   % Vermelho
+    figure; % Plot do espectro do sinal de entrada (módulo e fase)
+    subplot(2, 1, 1); % Plot do módulo do espectro
+    stem(frequencies, modulo_U, 'Color', cor_modulo);
+    xlabel('Frequência (Hz)');
+    ylabel('Módulo');
+    title('Módulo do espectro do Sinal de Entrada u(t)');
+    grid on;
+    subplot(2, 1, 2); % Plot da fase do espectro
+    stem(frequencies, fase_U, 'Color', cor_fase);
+    xlabel('Frequência (Hz)');
+    ylabel('Fase (rad)');
+    title('Fase do Espectro do Sinal de Entrada u(t)');
+    grid on;
+\end{verbatim}
+
+\newpage
+
+\section{Código 2}
+
+\begin{verbatim}
+    load('trabalho4-2023-1.mat'); % Carregar o arquivo 'trabalho4-2023-1.mat'
+    fs = 2; % Hz % Frequência de amostragem
+    U = fft(u); % Realizar a FFT do sinal de entrada 'u'
+    Y = fft(y); % Realizar a FFT do sinal de saída 'y'
+    G_estimated = Y ./ U; % Estimar a resposta em frequência do sistema G(jw)
     G_mag_dB = 20*log10(abs(G_estimated));
     G_phase_deg = rad2deg(angle(G_estimated));
-    % Frequências correspondentes
     N = length(u);
-    frequencies = (0:N-1) * (fs/N);
-    % Plotar o módulo e fase da resposta em frequência estimada na mesma figura em escala logarítmica
-    figure;
+    frequencies = (0:N-1) * (fs/N); % Frequências correspondentes
+    figure; % Plotar o módulo e fase da resposta em frequência estimada na mesma figura em escala logarítmica
     subplot(2, 1, 1);
     semilogx(frequencies, G_mag_dB, 'b', 'LineWidth', 2);
     title('Resposta em Frequência Estimada - Magnitude');
@@ -199,12 +237,42 @@ de entrada U(jw) e de saída Y(jw):
     grid on; 
 \end{verbatim}
 
-\section{Principais caracteríticas da resposta em frequência}
-
 \newpage
 
-\section{Determinação do sistema de 2$\textsuperscript{a}$ ordem}
+\section{Código 4}
 
-\section{System Identification Apps}
+\begin{verbatim}
+    load('trabalho4-2023-1.mat'); % Carregamento dos dados (substitua 'trabalho4-2023-1.mat' pelo nome correto do arquivo)
+    fs = 2; % Frequência de amostragem em Hz 
+    freq = (0:length(u)-1) * fs / length(u); % Vetor de frequências em Hz
+    U = fft(u); % Cálculo do espectro de entrada e saída
+    Y = fft(y);
+    H_estimado = Y ./ U; % Estimativa da resposta em frequência
+    % Inicialização dos parâmetros para ajuste manual
+    wn_guess = 0.2;
+    zeta_guess = 0.25;
+    % Calcula a resposta em frequência para os valores iniciais dos parâmetros
+    sistema = tf(wn_guess^2, [1, 2 * zeta_guess * wn_guess, wn_guess^2]);
+    H_modelo = freqresp(sistema, freq);
+    figure; % Plota a resposta em frequência estimada e do modelo inicial (magnitude)
+    subplot(2, 1, 1);
+    semilogx(freq, 20 * log10(abs(H_estimado)), 'b', 'LineWidth', 2);
+    hold on;
+    semilogx(freq, 20 * log10(abs(squeeze(H_modelo))), 'r', 'LineWidth', 2);
+    xlabel('Frequência (Hz)');
+    ylabel('Magnitude (dB)');
+    legend('Estimado', 'Modelo');
+    grid on;
+    subplot(2, 1, 2); % Plota a resposta em frequência do modelo inicial (fase em graus)
+    semilogx(freq, rad2deg(angle(H_estimado)), 'b', 'LineWidth', 2);
+    hold on;
+    semilogx(freq, rad2deg(angle(squeeze(H_modelo))), 'r', 'LineWidth', 2);
+    xlabel('Frequência (Hz)');
+    ylabel('Fase (graus)');
+    legend('Estimado', 'Modelo');
+    grid on;
+\end{verbatim}
+
+\end{appendices}
 
 \end{document}

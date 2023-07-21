@@ -11,8 +11,6 @@ U_phase = angle(U);
 
 % Realizar a FFT do sinal de saída 'y'
 Y = fft(y);
-Y_mag = abs(Y);
-Y_phase = angle(Y);
 
 % Estimar a resposta em frequência do sistema G(jw)
 G_estimated = Y ./ U;

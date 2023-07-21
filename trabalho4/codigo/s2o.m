@@ -1,48 +1,42 @@
-% Carregar o arquivo 'trabalho4-2023-1.mat'
+% Carregamento dos dados (substitua 'trabalho4-2023-1.mat' pelo nome correto do arquivo)
 load('trabalho4-2023-1.mat');
 
-% Frequência de amostragem
-fs = 2; % Hz
+% Frequência de amostragem e vetor de frequências em Hz
+fs = 2; % Frequência de amostragem em Hz
+freq = (0:length(u)-1) * fs / length(u); % Vetor de frequências em Hz
 
-% Realizar a FFT do sinal de entrada 'u'
+% Cálculo do espectro de entrada e saída
 U = fft(u);
-U_mag = abs(U);
-U_phase = angle(U);
-
-% Realizar a FFT do sinal de saída 'y'
 Y = fft(y);
-Y_mag = abs(Y);
-Y_phase = angle(Y);
 
-% Estimar a resposta em frequência do sistema G(jw)
-G_estimated = Y ./ U;
-G_mag_dB = 20*log10(abs(G_estimated));
-G_phase_deg = rad2deg(angle(G_estimated));
+% Estimativa da resposta em frequência
+H_estimado = Y ./ U;
 
-% Estimar a resposta em frequência do sistema G(jw)
-G_estimated = Y ./ U;
+% Inicialização dos parâmetros para ajuste manual
+wn_guess = 0.2;
+zeta_guess = 0.25;
 
-% Frequências correspondentes
-N = length(u);
-frequencies = (0:N-1) * (fs/N);
+% Calcula a resposta em frequência para os valores iniciais dos parâmetros
+sistema = tf(wn_guess^2, [1, 2 * zeta_guess * wn_guess, wn_guess^2]);
+H_modelo = freqresp(sistema, freq); 
 
-% Definir uma função de transferência de segunda ordem
-sys_model = @(p, w) p(1) ./ (1i*w).^2 + p(2) ./ (1i*w) + p(3);
+% Plota a resposta em frequência estimada e do modelo inicial (magnitude)
+figure;
+subplot(2, 1, 1);
+semilogx(freq, 20 * log10(abs(H_estimado)), 'b', 'LineWidth', 2);
+hold on;
+semilogx(freq, 20 * log10(abs(squeeze(H_modelo))), 'r', 'LineWidth', 2);
+xlabel('Frequência (Hz)');
+ylabel('Magnitude (dB)');
+legend('Estimado', 'Modelo');
+grid on;
 
-% Definir os parâmetros iniciais para o ajuste
-p0 = [1, 1, 1];
-
-% Realizar o ajuste dos parâmetros utilizando a função lsqcurvefit
-frequencies_rad = 2 * pi * frequencies; % Converter para radianos por segundo
-p_fit = lsqcurvefit(sys_model, p0, frequencies_rad, G_estimated);
-
-% Extrair os parâmetros do ajuste
-K_fit = p_fit(1);
-zeta_fit = p_fit(2);
-omega_n_fit = p_fit(3);
-
-% Imprimir os parâmetros do sistema ajustado
-disp('Parâmetros do sistema ajustado:');
-disp(['K: ', num2str(K_fit)]);
-disp(['Zeta: ', num2str(zeta_fit)]);
-disp(['Omega_n: ', num2str(omega_n_fit)]);
+% Plota a resposta em frequência do modelo inicial (fase em graus)
+subplot(2, 1, 2);
+semilogx(freq, rad2deg(angle(H_estimado)), 'b', 'LineWidth', 2);
+hold on;
+semilogx(freq, rad2deg(angle(squeeze(H_modelo))), 'r', 'LineWidth', 2);
+xlabel('Frequência (Hz)');
+ylabel('Fase (graus)');
+legend('Estimado', 'Modelo');
+grid on;
