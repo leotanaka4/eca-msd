@@ -1,5 +1,3 @@
-pkg load signal
-
 % Carregar os dados do arquivo
 data = load('trabalho4-2023-1.mat');
 u = data.u;
@@ -21,17 +19,24 @@ modulo_U = abs(U);
 % Fase do espectro do sinal de entrada
 fase_U = angle(U);
 
+% Cores para os plots
+cor_modulo = 'b'; % Azul
+cor_fase = 'r';   % Vermelho
+
 % Plot do espectro do sinal de entrada (módulo e fase)
 figure;
+
+% Plot do módulo do espectro
 subplot(2, 1, 1);
-plot(frequencies, modulo_U);
+stem(frequencies, modulo_U, 'Color', cor_modulo);
 xlabel('Frequência (Hz)');
 ylabel('Módulo');
-title('Espectro do Sinal de Entrada u(t)');
+title('Módulo do espectro do Sinal de Entrada u(t)');
 grid on;
 
+% Plot da fase do espectro
 subplot(2, 1, 2);
-plot(frequencies, fase_U);
+stem(frequencies, fase_U, 'Color', cor_fase);
 xlabel('Frequência (Hz)');
 ylabel('Fase (rad)');
 title('Fase do Espectro do Sinal de Entrada u(t)');

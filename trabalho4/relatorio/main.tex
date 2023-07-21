@@ -97,61 +97,58 @@ sinais u(t) e y(t).
 \section{FFT}
 
 \quad Determinando, utilizando a FFT (Fast Fourier Transform), o espectro do sinal de entrada
-(módulo e fase) em função da frequência em Hz. Utilizando Python e as bibliotecas disponíveis
-(NumPy, Matplotlib e Scipy) que auxiliam na utilização da FFT, na plotagem dos espectros e
-na coleta dos dados do arquivo .mat.
+(módulo e fase) em função da frequência em Hz. Utilizando o Matlab para coletar os dados,
+utilizar a FFT, calcular os espectros do sinal de entrada e plotar o gráfico.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.27]{fft.png}
+    \includegraphics[scale=0.34]{fft.png}
     \caption{Espectros dos sinais da entrada}
 \end{figure}
 
-\quad É possível observar a magnitude que varia entre 0 e 1
-com uma maior concentração de amostras abaixo de 0.6,
-um padrão de oscilação mais lento na parte esquerda do espectro e
-um padrão de oscilaçãõ mais rápido na parte direita do espectro.
-Já no espectro de fase, os valores ficaram variando entre dois valores 0 e $\pi$
-com um padrão de oscilação mais lento na parte esquerda do espectro e
-um padrão de oscilaçãõ mais rápido na parte direita do espectro.
+\quad É possível observar uma simetria no gráfico da mangnitude em torno de 1
+com uma parte central com valores iguais a 2.61115 entre 0.4 e 1.6,
+duas partes seguintes com valores iguais a 10.4446 entre (0.03 e 0.4) e (1.6 e 1.96) e duas
+partes extremas com os mesmos valores que a parte central. Já no gráfico de fase, é possível
+observar uma oscilação bem similar entre 0.4 e 1.6 e
+outras oscilações similares entre (0.03 e 0.4) e (1.6 e 1.96) com valores entre $-\pi$ e $\pi$.
 
 \small
 \begin{verbatim}
-    # Importando as bibliotecas
-    import numpy as np
-    import matplotlib.pyplot as plt
-    from scipy.io import loadmat
-    data = loadmat('trabalho4-2023-1.mat') # Carregar os dados do arquivo
-    u = np.array(data['u'])
-    y = np.array(data['y'])
-    t = np.array(data['t'])
-    # Frequencia de amostragem (fs) e período de amostragem (T)
-    fs = 2  # Hz
-    T = 1 / fs
-    U = np.fft.fft(u) # Calcula o espectro do sinal de entrada u(t) usando a FFT
-    frequencies = np.fft.fftfreq(len(U), d=T) # Vetor de frequencias para o eixo x
-    modulo_U = np.abs(U) # Modulo do espectro do sinal de entrada
-    fase_U = np.angle(U) # Fase do espectro do sinal de entrada
-    # Plot do espectro do sinal de entrada (módulo e fase)
-    plt.figure(figsize=(25, 12))
-    # Plot do modulo com estrelas e linhas para o eixo x
-    plt.subplot(2, 1, 1)
-    plt.scatter(frequencies, modulo_U, marker='*', s=100, color='b')
-    plt.vlines(frequencies, ymin=0, ymax=modulo_U, colors='b')
-    plt.xlabel('Frequencia (Hz)')
-    plt.ylabel('Módulo')
-    plt.title('Espectro da magnitude')
-    plt.grid()
-    # Plot da fase com estrelas e linhas para o eixo x
-    plt.subplot(2, 1, 2)
-    plt.scatter(frequencies, fase_U, marker='*', s=100, color='r')
-    plt.vlines(frequencies, ymin=0, ymax=fase_U, colors='r')
-    plt.xlabel('Frequencia (Hz)')
-    plt.ylabel('Fase (rad)')
-    plt.title('Espectro da fase')
-    plt.grid()
-    plt.tight_layout()
-    plt.show()
+    % Carregar os dados do arquivo
+    data = load('trabalho4-2023-1.mat');
+    u = data.u;
+    t = data.t;
+    % Frequência de amostragem (fs) e período de amostragem (T)
+    fs = 2; % Hz
+    T = 1 / fs;
+    % Calcula o espectro do sinal de entrada u(t) usando a FFT
+    U = fft(u);
+    % Vetor de frequências para o eixo x
+    frequencies = (0:length(U) - 1) * (fs / length(U));
+    % Módulo do espectro do sinal de entrada
+    modulo_U = abs(U);
+    % Fase do espectro do sinal de entrada
+    fase_U = angle(U);
+    % Cores para os plots
+    cor_modulo = 'b'; % Azul
+    cor_fase = 'r';   % Vermelho
+    % Plot do espectro do sinal de entrada (módulo e fase)
+    figure;
+    % Plot do módulo do espectro
+    subplot(2, 1, 1);
+    stem(frequencies, modulo_U, 'Color', cor_modulo);
+    xlabel('Frequência (Hz)');
+    ylabel('Módulo');
+    title('Módulo do espectro do Sinal de Entrada u(t)');
+    grid on;
+    % Plot da fase do espectro
+    subplot(2, 1, 2);
+    stem(frequencies, fase_U, 'Color', cor_fase);
+    xlabel('Frequência (Hz)');
+    ylabel('Fase (rad)');
+    title('Fase do Espectro do Sinal de Entrada u(t)');
+    grid on;
 \end{verbatim}
 
 \section{Resposta em frequência do sistema G(jw)}
@@ -167,27 +164,47 @@ de entrada U(jw) e de saída Y(jw):
 
 \small
 \begin{verbatim}
-    Y = np.fft.fft(y) # Calcula o espectro do sinal de saida y(t) usando a FFT
-    G = Y / U # Calcula a resposta em frequencia estimada G(jw)
-    modulo_G_dB = 20 * np.log10(np.abs(G)) # Calcula o modulo em dB da resposta em frequencia estimada
-    fase_G_graus = np.angle(G) * (180 / np.pi) # Calcula a fase em graus da resposta em frequencia estimada
-    plt.figure(figsize=(25, 12)) # Plot dos graficos usando subplot
-    plt.subplot(2, 1, 1) # Plot do modulo com estrelas e linhas para o eixo x (resposta em frequencia estimada - modulo)
-    plt.scatter(frequencies, modulo_G_dB, marker='*', s=100, color='b')
-    plt.vlines(frequencies, ymin=0, ymax=modulo_G_dB, colors='b', linestyles='dotted')
-    plt.xlabel('Frequencia (Hz)')
-    plt.ylabel('Modulo da Resposta em Frequencia (dB)')
-    plt.title('Resposta em Frequencia Estimada')
-    plt.grid()
-    plt.subplot(2, 1, 2) # Plot da fase com estrelas e linhas para o eixo x (resposta em frequencia estimada - fase)
-    plt.scatter(frequencies, fase_G_graus, marker='*', s=100, color='r')
-    plt.vlines(frequencies, ymin=0, ymax=fase_G_graus, colors='r', linestyles='dotted')
-    plt.xlabel('Frequencia (Hz)')
-    plt.ylabel('Fase da Resposta em Frequencia (graus)')
-    plt.title('Fase da Resposta em Frequencia Estimada')
-    plt.grid()
-    plt.tight_layout()
-    plt.show()
+    % Carregar o arquivo 'trabalho4-2023-1.mat'
+    load('trabalho4-2023-1.mat');
+    % Frequência de amostragem
+    fs = 2; % Hz
+    % Realizar a FFT do sinal de entrada 'u'
+    U = fft(u);
+    U_mag = abs(U);
+    U_phase = angle(U);
+    % Realizar a FFT do sinal de saída 'y'
+    Y = fft(y);
+    Y_mag = abs(Y);
+    Y_phase = angle(Y);
+    % Estimar a resposta em frequência do sistema G(jw)
+    G_estimated = Y ./ U;
+    G_mag_dB = 20*log10(abs(G_estimated));
+    G_phase_deg = rad2deg(angle(G_estimated));
+    % Frequências correspondentes
+    N = length(u);
+    frequencies = (0:N-1) * (fs/N);
+    % Plotar o módulo e fase da resposta em frequência estimada na mesma figura em escala logarítmica
+    figure;
+    subplot(2, 1, 1);
+    semilogx(frequencies, G_mag_dB, 'b', 'LineWidth', 2);
+    title('Resposta em Frequência Estimada - Magnitude');
+    xlabel('Frequência (Hz)');
+    ylabel('Magnitude (dB)');
+    grid on;
+    subplot(2, 1, 2);
+    semilogx(frequencies, G_phase_deg, 'r', 'LineWidth', 2);
+    title('Resposta em Frequência Estimada - Fase');
+    xlabel('Frequência (Hz)');
+    ylabel('Fase (graus)');
+    grid on; 
 \end{verbatim}
+
+\section{Principais caracteríticas da resposta em frequência}
+
+\newpage
+
+\section{Determinação do sistema de 2$\textsuperscript{a}$ ordem}
+
+\section{System Identification Apps}
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  20 JUL 2023 22:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  21 JUL 2023 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -489,42 +489,32 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 86.
  (C:\Users\Lucas\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<./images//fft.png, id=4, 1798.72pt x 859.21pt>
+<./images//fft.png, id=4, 1445.4pt x 697.10437pt>
 File: ./images//fft.png Graphic file (type png)
 <use ./images//fft.png>
-Package pdftex.def Info: ./images//fft.png  used on input line 106.
-(pdftex.def)             Requested size: 485.66089pt x 231.9898pt.
+Package pdftex.def Info: ./images//fft.png  used on input line 105.
+(pdftex.def)             Requested size: 491.4295pt x 237.01234pt.
  [1
 
-{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//fft.png>]
-<./images//g.png, id=16, 1798.72pt x 859.21pt>
+{C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./images//fft.png (PNG copy)>]
+<./images//g.png, id=14, 1445.4pt x 697.10437pt>
 File: ./images//g.png Graphic file (type png)
 <use ./images//g.png>
-Package pdftex.def Info: ./images//g.png  used on input line 164.
-(pdftex.def)             Requested size: 467.65617pt x 223.38933pt.
- [2]
-Overfull \hbox (24.9684pt too wide) in paragraph at lines 191--191
-[]    \OT1/cmtt/m/n/9 plt.subplot(2, 1, 1) # Plot do modulo com estrelas e linhas para o eixo x (resposta em frequencia estimada - modulo)[] 
- []
-
-
-Overfull \hbox (6.06862pt too wide) in paragraph at lines 191--191
-[]    \OT1/cmtt/m/n/9 plt.subplot(2, 1, 2) # Plot da fase com estrelas e linhas para o eixo x (resposta em frequencia estimada - fase)[] 
- []
-
-[3 <./images//g.png>] (main.aux) ) 
+Package pdftex.def Info: ./images//g.png  used on input line 161.
+(pdftex.def)             Requested size: 375.79514pt x 181.24286pt.
+ [2] [3 <./images//g.png (PNG copy)>] [4] [5] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 16504 strings out of 478338
- 325769 string characters out of 2836700
+ 16511 strings out of 478338
+ 325869 string characters out of 2836700
  634268 words of memory out of 3000000
- 34633 multiletter control sequences out of 15000+600000
- 477313 words of font info for 60 fonts, out of 8000000 for 9000
+ 34639 multiletter control sequences out of 15000+600000
+ 478868 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,80p,483b,284s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (3 pages, 243573 bytes).
+ 84i,11n,80p,483b,384s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (5 pages, 293187 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
