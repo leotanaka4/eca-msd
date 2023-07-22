@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1689978670 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho4/relatorio/main.tex" "main.pdf" "main" 1689978672
+["pdflatex"] 1689988462 "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho4/relatorio/main.tex" "main.pdf" "main" 1689988463
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1689730049 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1728.pk" 1683389622 20624 b5ef9de7fe9a614af111cda132cc174a ""
   "C:/Users/Lucas/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1663527945 10329961 d1b2e8d382e0f118d0e00de942ecb91d ""
@@ -144,12 +144,18 @@
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/setspace/setspace.sty" 1324294077 22913 a27d7908fc6f0385466454a966a316eb ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Lucas/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho4/relatorio/main.tex" 1689978668 9798 5c33e60744ec2b8af149382f8aa7fec4 ""
+  "c:/Users/Lucas/OneDrive/Documentos/GitHub/eca-msd/trabalho4/relatorio/main.tex" 1689988459 15035 68aa9b1717280ec3e24fcf65220a2150 ""
   "images//fft.png" 1689962638 78539 36808819079b7cf801c57583c978b863 ""
-  "images//g.png" 1689965272 80987 8308c647f76b63222d4731f6d42c786e ""
-  "images//g_manual.png" 1689972539 83655 dbf39768dc7a99d7f95f50ad3662c4ce ""
-  "main.aux" 1689978672 1879 b579e5e09c1476efc22471c37c7068aa "pdflatex"
-  "main.tex" 1689978668 9798 5c33e60744ec2b8af149382f8aa7fec4 ""
+  "images//g.png" 1689986333 82915 1041c036560c99966b880a89043fbc07 ""
+  "images//g_manual.png" 1689986063 102030 939c4d1794a078830c2239a5b0b6f7f3 ""
+  "images//si1.png" 1689980820 16295 114b9ea1dc179a807ae41521eb5d5368 ""
+  "images//si2.png" 1689982591 21208 f4a530c8ff409a1699aa7caa7ef6be1e ""
+  "images//si3.png" 1689982771 24155 3d111d2141f238f66cd58b215efeb986 ""
+  "images//si4.png" 1689982818 38252 4756524945c55d4de5abb5f20c5d63c2 ""
+  "images//si5.png" 1689982892 56034 b9fd93b528e7291a207ced12746f7751 ""
+  "images//si6.png" 1689982946 4651 091744069ec6dd675c665eeba8a0a2e1 ""
+  "main.aux" 1689988463 1926 9225d6bccb8d6bdc897c23a72c2f2421 "pdflatex"
+  "main.tex" 1689988459 15035 68aa9b1717280ec3e24fcf65220a2150 ""
   (generated)
   "main.aux"
   "main.log"

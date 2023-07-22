@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  21 JUL 2023 19:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.18)  21 JUL 2023 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -506,48 +506,68 @@ Package pdftex.def Info: ./images//g.png  used on input line 123.
 <./images//g_manual.png, id=20, 1445.4pt x 697.10437pt>
 File: ./images//g_manual.png Graphic file (type png)
 <use ./images//g_manual.png>
-Package pdftex.def Info: ./images//g_manual.png  used on input line 139.
+Package pdftex.def Info: ./images//g_manual.png  used on input line 152.
 (pdftex.def)             Requested size: 505.89758pt x 243.99017pt.
  [3 <./images//g_manual.png (PNG copy)>]
-File: ./images//g.png Graphic file (type png)
-<use ./images//g.png>
-Package pdftex.def Info: ./images//g.png  used on input line 161.
-(pdftex.def)             Requested size: 289.07487pt x 139.4184pt.
-File: ./images//g.png Graphic file (type png)
-<use ./images//g.png>
-Package pdftex.def Info: ./images//g.png  used on input line 167.
-(pdftex.def)             Requested size: 289.07487pt x 139.4184pt.
-File: ./images//g.png Graphic file (type png)
-<use ./images//g.png>
-Package pdftex.def Info: ./images//g.png  used on input line 173.
-(pdftex.def)             Requested size: 289.07487pt x 139.4184pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[4] [5]
-Overfull \hbox (30.22pt too wide) in paragraph at lines 238--238
-[]    \OT1/cmtt/m/n/10 figure; % Plotar o m^^Sodulo e fase da resposta em frequ^encia estimada na mesma figura em escala logar^^S^^Ptmica[] 
+<./images//si1.png, id=27, 205.9695pt x 330.033pt>
+File: ./images//si1.png Graphic file (type png)
+<use ./images//si1.png>
+Package pdftex.def Info: ./images//si1.png  used on input line 176.
+(pdftex.def)             Requested size: 102.98448pt x 165.01608pt.
+<./images//si2.png, id=29, 354.72525pt x 374.5995pt>
+File: ./images//si2.png Graphic file (type png)
+<use ./images//si2.png>
+Package pdftex.def Info: ./images//si2.png  used on input line 183.
+(pdftex.def)             Requested size: 141.88757pt x 149.83714pt.
+<./images//si5.png, id=30, 1156.32pt x 613.0905pt>
+File: ./images//si5.png Graphic file (type png)
+<use ./images//si5.png>
+Package pdftex.def Info: ./images//si5.png  used on input line 190.
+(pdftex.def)             Requested size: 277.52246pt x 147.14471pt.
+ [4 <./images//si1.png> <./images//si2.png> <./images//si5.png>]
+<./images//si6.png, id=37, 245.718pt x 74.07675pt>
+File: ./images//si6.png Graphic file (type png)
+<use ./images//si6.png>
+Package pdftex.def Info: ./images//si6.png  used on input line 200.
+(pdftex.def)             Requested size: 172.00142pt x 51.85336pt.
+<./images//si3.png, id=38, 1445.4pt x 697.10437pt>
+File: ./images//si3.png Graphic file (type png)
+<use ./images//si3.png>
+Package pdftex.def Info: ./images//si3.png  used on input line 206.
+(pdftex.def)             Requested size: 346.90309pt x 167.30846pt.
+<./images//si4.png, id=39, 1445.4pt x 697.10437pt>
+File: ./images//si4.png Graphic file (type png)
+<use ./images//si4.png>
+Package pdftex.def Info: ./images//si4.png  used on input line 212.
+(pdftex.def)             Requested size: 346.90309pt x 167.30846pt.
+ [5 <./images//si6.png> <./images//si3.png (PNG copy)> <./images//si4.png (PNG copy)>] [6] [7] [8]
+Overfull \hbox (9.22018pt too wide) in paragraph at lines 380--380
+[]\OT1/cmtt/m/n/10 % Voc^e pode utilizar m^^Setodos de identifica^^Xc~ao de sistemas, como o m^^Setodo dos m^^S^^Pnimos quadrados ou outros.[] 
  []
 
-[6]
-Overfull \hbox (98.4694pt too wide) in paragraph at lines 274--274
-[]    \OT1/cmtt/m/n/10 load('trabalho4-2023-1.mat'); % Carregamento dos dados (substitua 'trabalho4-2023-1.mat' pelo nome correto do arquivo)[] 
+
+Overfull \hbox (72.21964pt too wide) in paragraph at lines 380--380
+[]\OT1/cmtt/m/n/10 % Calcule o m^^Sodulo e a fase da resposta em frequ^encia da fun^^Xc~ao de transfer^encia G(jw) em graus e dB, respectivamente[] 
  []
 
-[7] (main.aux) ) 
+
+Overfull \hbox (3.97023pt too wide) in paragraph at lines 380--380
+[]\OT1/cmtt/m/n/10 semilogx(omega_rad, 20*log10(squeeze(mag_Gs)), 'DisplayName', 'Sistema de segunda ordem','LineWidth',2);[] 
+ []
+
+[9] [10] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 16518 strings out of 478338
- 326065 string characters out of 2836700
- 631268 words of memory out of 3000000
- 34646 multiletter control sequences out of 15000+600000
+ 16583 strings out of 478338
+ 327205 string characters out of 2836700
+ 632270 words of memory out of 3000000
+ 34705 multiletter control sequences out of 15000+600000
  478570 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,80p,483b,284s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 84i,11n,80p,483b,424s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\Lucas\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1728.pk><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Lucas/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (7 pages, 388410 bytes).
+Output written on main.pdf (10 pages, 550033 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
